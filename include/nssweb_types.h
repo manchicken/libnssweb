@@ -17,24 +17,11 @@
  * along with libnssweb. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __NSSWEB_CONFIG_H__
-#define __NSSWEB_CONFIG_H__
+#ifndef __NSSWEB_TYPES_H__
+#define __NSSWEB_TYPES_H__
 
-///// There are no standards on these limits, so I'm making them configurable. Some of these may be a bit long
-
-// The size limit of a query string key
-#define CFG_QS_KEY_LENGTH 16
-
-// The size limit of a query string value
-#define CFG_QS_VALUE_LENGTH 64
-
-// The maximum number of entries
-#define CFG_QS_ENTRY_LIMIT 32
-
-// The size limit for the query string
-#define CFG_QUERY_STRING_LIMIT ( ( CFG_QS_KEY_LENGTH + CFG_QS_VALUE_LENGTH ) * CFG_QS_ENTRY_LIMIT )
-
-// The size limit for the REQUEST_URI
-#define CFG_REQUEST_URI_LENGTH 256
+typedef short continue_t;
+#define CONTINUE_NO		((continue_t)0)
+#define CONTINUE_YES	((continue_t)1)
 
 #endif

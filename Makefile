@@ -22,21 +22,26 @@ OBJDIR = ./obj
 LIBDIR = ./lib
 
 CC = gcc
+AR = ar -cr
+RANLIB = ranlib
 RM = rm -f
 
-CCFLAGS = -ggdb3
+CFLAGS = -fPIC -ggdb3 -I$(INCDIR)
 
 SRCS_C = $(SRCDIR)/nsshttp.c
 OBJS = $(SRCS_C:.c=.o)
 LIBS = $(LIBDIR)/libnssweb.a
 
 .PHONY: all
-all: $LIBDIR/libnssweb.a
+all: $(LIBDIR)/libnssweb.a
 
-$LIBDIR/libnssweb.a: $OBJDIR/nsshttp.o
+$(LIBDIR)/libnssweb.a: $(OBJS)
+	$(AR) $@ $(OBJS)
+	$(RANLIB) $@
 
-$OBJDIR/nsshttp.o: $SRCDIR/nsshttp.c
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) $< -c -o $@
 
 .PHONY: clean
 clean:
-	$(RM) 
+	$(RM) $(OBJDIR)/*.o $(LIBDIR)/*.a

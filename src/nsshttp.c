@@ -15,4 +15,16 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with libnssweb. If not, see <http://www.gnu.org/licenses/>.
- */
+*/
+
+#define __NSSHTTP_C__
+
+#include <nsshttp.h>
+
+#include <stdio.h>
+#include <string.h>
+
+continue_t http_init(http_context_t *ctx) {
+	printf("Initting HTTP [not for real tho]\n");
+	return CONTINUE_YES;
+}

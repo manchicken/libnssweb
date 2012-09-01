@@ -21,7 +21,7 @@
 #define __NSSWEB_H__
 
 #include <nssweb_config.h>
-
+#include <nssweb_types.h>
 #include <nsshttp.h>
 
 #endif
