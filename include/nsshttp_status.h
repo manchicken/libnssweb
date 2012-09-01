@@ -17,12 +17,29 @@
  * along with libnssweb. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __NSSHTTP_ERRORS_H__
-#define __NSSHTTP_ERRORS_H__
+#ifndef __NSSHTTP_STATUS_H__
+#define __NSSHTTP_STATUS_H__
 
-typedef unsigned short http_error_t;
+// Information for these 
 
-#
-#define HTERR_FILE_NOT_FOUND	404
+typedef unsigned short http_status_t;
+
+// OK
+#define HTTPSTAT_OK						(http_status_t)200
+
+// Redirection
+#define HTTPSTAT_MOVED					(http_status_t)301
+#define HTTPSTAT_REDIRECT				(http_status_t)302
+#define HTTPSTAT_FOUND 					HTTPSTAT_REDIRECT
+#define HTTPSTAT_NOT_MODIFIED			(http_status_t)304
+
+// Non-fatal error
+#define HTTPSTAT_BAD_REQUEST			(http_status_t)400
+#define HTTPSTAT_UNAUTHORIZED			(http_status_t)401
+#define HTTPSTAT_FORBIDDEN				(http_status_t)403
+#define HTTPSTAT_FILE_NOT_FOUND			(http_status_t)404
+#define HTTPSTAT_NOT_ALLOWED			(http_status_t)
+
+// Fatal error
 
 #endif
