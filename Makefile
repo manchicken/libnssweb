@@ -26,17 +26,27 @@ AR = ar -cr
 RANLIB = ranlib
 RM = rm -f
 
-CFLAGS = -fPIC -ggdb3 -I$(INCDIR)
+CFLAGS = -fPIC -ggdb3 -I$(INCDIR) -Wall
 
-SRCS_C = $(SRCDIR)/nsshttp.c
-OBJS = $(SRCS_C:.c=.o)
-LIBS = $(LIBDIR)/libnssweb.a
+LIBNSSHTTP_SRCS = $(SRCDIR)/nsshttp.c $(SRCDIR)/nsshttpio.c
+LIBNSSTEMPLATE_SRCS = $(SRCDIR)/nsstemplate.c
+
+LIBNSSHTTP_OBJS = $(OBJDIR)/nsshttp.o $(OBJDIR)/nsshttpio.o
+LIBNSSTEMPLATE_OBJS = $(OBJDIR)/nsstemplate.o
+
+LIBS = $(LIBDIR)/libnsshttp.a $(LIBDIR)/libnsstemplate.a
+#LIBS = $(LIBDIR)/libnsshttp.a
 
 .PHONY: all
-all: $(LIBDIR)/libnssweb.a
+all: $(LIBS)
+	ctags -R -f .tags
 
-$(LIBDIR)/libnssweb.a: $(OBJS)
-	$(AR) $@ $(OBJS)
+$(LIBDIR)/libnsshttp.a: $(LIBNSSHTTP_OBJS)
+	$(AR) $@ $(LIBNSSHTTP_OBJS)
+	$(RANLIB) $@
+
+$(LIBDIR)/libnsstemplate.a: $(LIBNSSTEMPLATE_OBJS)
+	$(AR) $@ $(LIBNSSTEMPLATE_OBJS)
 	$(RANLIB) $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
@@ -45,3 +55,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 .PHONY: clean
 clean:
 	$(RM) $(OBJDIR)/*.o $(LIBDIR)/*.a
+
+.PHONY: tags
+tags:
+	ctags -R -f .tags

@@ -37,4 +37,11 @@
 // The size limit for the REQUEST_URI
 #define CFG_REQUEST_URI_LENGTH 256
 
+// The size limit for the Content-type
+#define CFG_CONTENT_LENGTH_LIMIT 32
+
+// An HTTP header entity length
+#define CFG_HTTP_HEADER_ENTITY_LENGTH 32
+#define CFG_HTTP_HEADER_LINE_LENGTH ((CFG_HTTP_HEADER_ENTITY_LENGTH*2)+5)
+
 #endif

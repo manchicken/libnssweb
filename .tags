@@ -1,0 +1,111 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AR	Makefile	/^AR = ar -cr$/;"	m
+CC	Makefile	/^CC = gcc$/;"	m
+CFG_CONTENT_LENGTH_LIMIT	include/nssweb_config.h	/^#define CFG_CONTENT_LENGTH_LIMIT /;"	d
+CFG_HTTP_HEADER_ENTITY_LENGTH	include/nssweb_config.h	/^#define CFG_HTTP_HEADER_ENTITY_LENGTH /;"	d
+CFG_HTTP_HEADER_LINE_LENGTH	include/nssweb_config.h	/^#define CFG_HTTP_HEADER_LINE_LENGTH /;"	d
+CFG_QS_ENTRY_LIMIT	include/nssweb_config.h	/^#define CFG_QS_ENTRY_LIMIT /;"	d
+CFG_QS_KEY_LENGTH	include/nssweb_config.h	/^#define CFG_QS_KEY_LENGTH /;"	d
+CFG_QS_VALUE_LENGTH	include/nssweb_config.h	/^#define CFG_QS_VALUE_LENGTH /;"	d
+CFG_QUERY_STRING_LIMIT	include/nssweb_config.h	/^#define CFG_QUERY_STRING_LIMIT /;"	d
+CFG_REQUEST_URI_LENGTH	include/nssweb_config.h	/^#define CFG_REQUEST_URI_LENGTH /;"	d
+CFLAGS	Makefile	/^CFLAGS = -fPIC -ggdb3 -I$(INCDIR)$/;"	m
+CONTENT_TYPE_TEXT_HTML	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TEXT_HTML	/;"	d
+CONTENT_TYPE_TEXT_PLAIN	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TEXT_PLAIN	/;"	d
+CONTINUE_NO	include/nssweb_types.h	/^#define CONTINUE_NO	/;"	d
+CONTINUE_YES	include/nssweb_types.h	/^#define CONTINUE_YES	/;"	d
+HTTPIO_HEADER_LINE_ENDING	include/nsshttpio.h	/^#define HTTPIO_HEADER_LINE_ENDING /;"	d
+HTTPIO_LINE_ENDING	include/nsshttpio.h	/^#define HTTPIO_LINE_ENDING /;"	d
+HTTPSTATLINE_INTERNAL_SERVER_ERROR	include/nsshttp_status.h	/^#define HTTPSTATLINE_INTERNAL_SERVER_ERROR	/;"	d
+HTTPSTATLINE_NO_STATUS	include/nsshttp_status.h	/^#define HTTPSTATLINE_NO_STATUS	/;"	d
+HTTPSTATLINE_OK	include/nsshttp_status.h	/^#define HTTPSTATLINE_OK	/;"	d
+HTTPSTAT_BAD_REQUEST	include/nsshttp_status.h	/^#define HTTPSTAT_BAD_REQUEST	/;"	d
+HTTPSTAT_FILE_NOT_FOUND	include/nsshttp_status.h	/^#define HTTPSTAT_FILE_NOT_FOUND	/;"	d
+HTTPSTAT_FORBIDDEN	include/nsshttp_status.h	/^#define HTTPSTAT_FORBIDDEN	/;"	d
+HTTPSTAT_FOUND	include/nsshttp_status.h	/^#define HTTPSTAT_FOUND /;"	d
+HTTPSTAT_HTTP_VERSION_NOT_SUPPORTED	include/nsshttp_status.h	/^#define HTTPSTAT_HTTP_VERSION_NOT_SUPPORTED	/;"	d
+HTTPSTAT_INTERNAL_SERVER_ERROR	include/nsshttp_status.h	/^#define HTTPSTAT_INTERNAL_SERVER_ERROR	/;"	d
+HTTPSTAT_LENGTH_REQUIRED	include/nsshttp_status.h	/^#define HTTPSTAT_LENGTH_REQUIRED	/;"	d
+HTTPSTAT_MOVED	include/nsshttp_status.h	/^#define HTTPSTAT_MOVED	/;"	d
+HTTPSTAT_NOT_ALLOWED	include/nsshttp_status.h	/^#define HTTPSTAT_NOT_ALLOWED	/;"	d
+HTTPSTAT_NOT_IMPLEMENTED	include/nsshttp_status.h	/^#define HTTPSTAT_NOT_IMPLEMENTED	/;"	d
+HTTPSTAT_NOT_MODIFIED	include/nsshttp_status.h	/^#define HTTPSTAT_NOT_MODIFIED	/;"	d
+HTTPSTAT_NO_STATUS	include/nsshttp_status.h	/^#define HTTPSTAT_NO_STATUS	/;"	d
+HTTPSTAT_OK	include/nsshttp_status.h	/^#define HTTPSTAT_OK	/;"	d
+HTTPSTAT_REDIRECT	include/nsshttp_status.h	/^#define HTTPSTAT_REDIRECT	/;"	d
+HTTPSTAT_REQUEST_ENTITY_TOO_LARGE	include/nsshttp_status.h	/^#define HTTPSTAT_REQUEST_ENTITY_TOO_LARGE	/;"	d
+HTTPSTAT_REQUEST_URI_TOO_LONG	include/nsshttp_status.h	/^#define HTTPSTAT_REQUEST_URI_TOO_LONG	/;"	d
+HTTPSTAT_SERVICE_UNAVAILABLE	include/nsshttp_status.h	/^#define HTTPSTAT_SERVICE_UNAVAILABLE	/;"	d
+HTTPSTAT_UNAUTHORIZED	include/nsshttp_status.h	/^#define HTTPSTAT_UNAUTHORIZED	/;"	d
+HTTP_CONTENT_TYPE_SET	include/nsshttp_content_type.h	/^#define HTTP_CONTENT_TYPE_SET(/;"	d
+HTTP_HEADER_CONTENT_TYPE	include/nsshttp.h	/^#define HTTP_HEADER_CONTENT_TYPE	/;"	d
+HTTP_HEADER_LINE_SEP	include/nsshttp.h	/^#define HTTP_HEADER_LINE_SEP	/;"	d
+HTTP_HEADER_TERMINATOR	include/nsshttp.h	/^#define HTTP_HEADER_TERMINATOR	/;"	d
+HTTP_STATUS_INTERNAL_SERVER_ERROR	include/nsshttp_status.h	/^#define HTTP_STATUS_INTERNAL_SERVER_ERROR	/;"	d
+HTTP_STATUS_LINE_LENGTH	include/nsshttp_status.h	/^#define HTTP_STATUS_LINE_LENGTH /;"	d
+HTTP_STATUS_OK	include/nsshttp_status.h	/^#define HTTP_STATUS_OK /;"	d
+INCDIR	Makefile	/^INCDIR = .\/include$/;"	m
+INIT_HTTP_CONTENT_TYPE_T	include/nsshttp_content_type.h	/^#define INIT_HTTP_CONTENT_TYPE_T(/;"	d
+INIT_HTTP_CONTEXT_T	include/nsshttp.h	/^#define INIT_HTTP_CONTEXT_T(/;"	d
+INIT_HTTP_REQUEST_HEADER_T	include/nsshttp.h	/^#define INIT_HTTP_REQUEST_HEADER_T(/;"	d
+INIT_HTTP_RESPONSE_HEADER_T	include/nsshttp.h	/^#define INIT_HTTP_RESPONSE_HEADER_T(/;"	d
+INIT_HTTP_STATUS_CODE_T	include/nsshttp_status.h	/^#define INIT_HTTP_STATUS_CODE_T(/;"	d
+INIT_HTTP_STATUS_LINE_T	include/nsshttp_status.h	/^#define INIT_HTTP_STATUS_LINE_T(/;"	d
+INIT_HTTP_STATUS_T	include/nsshttp_status.h	/^#define INIT_HTTP_STATUS_T(/;"	d
+INIT_QS_ENTRY_T	include/nsshttp.h	/^#define INIT_QS_ENTRY_T(/;"	d
+INIT_QUERY_STRING_T	include/nsshttp.h	/^#define INIT_QUERY_STRING_T(/;"	d
+LIBDIR	Makefile	/^LIBDIR = .\/lib$/;"	m
+LIBNSSHTTP_OBJSS	Makefile	/^LIBNSSHTTP_OBJSS = $(SRCDIR)\/nsshttp.c$/;"	m
+LIBNSSHTTP_SRCS	Makefile	/^LIBNSSHTTP_SRCS = $(SRCDIR)\/nsshttp.c$/;"	m
+LIBNSSTEMPLATE_OBJSS	Makefile	/^LIBNSSTEMPLATE_OBJSS = $(SRCDIR)\/nsstemplate.c$/;"	m
+LIBNSSTEMPLATE_SRCS	Makefile	/^LIBNSSTEMPLATE_SRCS = $(SRCDIR)\/nsstemplate.c$/;"	m
+LIBS	Makefile	/^LIBS = $(LIBDIR)\/libnsshttp.a $(LIBDIR)\/libnsstemplate.a$/;"	m
+MAKE_HTTP_STATUS	include/nsshttp_status.h	/^#define MAKE_HTTP_STATUS(/;"	d
+OBJDIR	Makefile	/^OBJDIR = .\/obj$/;"	m
+RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
+RM	Makefile	/^RM = rm -f$/;"	m
+SRCDIR	Makefile	/^SRCDIR = .\/src$/;"	m
+__NSSHTTPIO_H__	include/nsshttpio.h	/^#define __NSSHTTPIO_H__$/;"	d
+__NSSHTTP_CONTENT_TYPE_H__	include/nsshttp_content_type.h	/^#define __NSSHTTP_CONTENT_TYPE_H__$/;"	d
+__NSSHTTP_C__	src/nsshttp.c	/^#define __NSSHTTP_C__$/;"	d	file:
+__NSSHTTP_H__	include/nsshttp.h	/^#define __NSSHTTP_H__$/;"	d
+__NSSHTTP_STATUS_H__	include/nsshttp_status.h	/^#define __NSSHTTP_STATUS_H__$/;"	d
+__NSSWEB_CONFIG_H__	include/nssweb_config.h	/^#define __NSSWEB_CONFIG_H__$/;"	d
+__NSSWEB_H__	include/nssweb.h	/^#define __NSSWEB_H__$/;"	d
+__NSSWEB_TYPES_H__	include/nssweb_types.h	/^#define __NSSWEB_TYPES_H__$/;"	d
+_http_print_header_to_stream	src/nsshttp.c	/^inline void _http_print_header_to_stream(unbuffered_http_stream_t *stream, unbuffered_http_output_t *output) {$/;"	f
+_http_print_stream_unbuffered	src/nsshttp.c	/^inline void _http_print_stream_unbuffered(unbuffered_http_stream_t *stream, unbuffered_http_output_t *output) {$/;"	f
+content_type	include/nsshttp.h	/^	http_content_type_t content_type;$/;"	m	struct:__anon4
+continue_t	include/nssweb_types.h	/^typedef short continue_t;$/;"	t
+entries	include/nsshttp.h	/^	qs_entry_t entries[CFG_QS_ENTRY_LIMIT];$/;"	m	struct:__anon2
+entries_len	include/nsshttp.h	/^	int entries_len;$/;"	m	struct:__anon2
+http_content_type_t	include/nsshttp_content_type.h	/^typedef char http_content_type_t[CFG_CONTENT_LENGTH_LIMIT];$/;"	t
+http_context_t	include/nsshttp.h	/^} http_context_t;$/;"	t	typeref:struct:__anon5
+http_header_line_construct	src/nsshttp.c	/^unbuffered_http_output_t* http_header_line_construct($/;"	f
+http_init	src/nsshttp.c	/^continue_t http_init(http_context_t *ctx) {$/;"	f
+http_output	src/nsshttp.c	/^continue_t http_output($/;"	f
+http_request_header_t	include/nsshttp.h	/^} http_request_header_t;$/;"	t	typeref:struct:__anon3
+http_response_header_t	include/nsshttp.h	/^} http_response_header_t;$/;"	t	typeref:struct:__anon4
+http_status_code_t	include/nsshttp_status.h	/^typedef unsigned short http_status_code_t;$/;"	t
+http_status_line_t	include/nsshttp_status.h	/^typedef char http_status_line_t[HTTP_STATUS_LINE_LENGTH];$/;"	t
+http_status_t	include/nsshttp_status.h	/^} http_status_t;$/;"	t	typeref:struct:__anon6
+key	include/nsshttp.h	/^	char key[CFG_QS_KEY_LENGTH];$/;"	m	struct:__anon1
+key_len	include/nsshttp.h	/^	int key_len;$/;"	m	struct:__anon1
+line	include/nsshttp_status.h	/^	http_status_line_t line;$/;"	m	struct:__anon6
+qs_entry_t	include/nsshttp.h	/^} qs_entry_t;$/;"	t	typeref:struct:__anon1
+query_string	include/nsshttp.h	/^	query_string_t query_string;$/;"	m	struct:__anon5
+query_string_t	include/nsshttp.h	/^} query_string_t;$/;"	t	typeref:struct:__anon2
+request_header	include/nsshttp.h	/^	http_request_header_t request_header;$/;"	m	struct:__anon5
+request_uri	include/nsshttp.h	/^	char request_uri[CFG_REQUEST_URI_LENGTH];$/;"	m	struct:__anon3
+response_header	include/nsshttp.h	/^	http_response_header_t response_header;$/;"	m	struct:__anon5
+status	include/nsshttp.h	/^	http_status_t status;$/;"	m	struct:__anon4
+status	include/nsshttp_status.h	/^	http_status_code_t status;$/;"	m	struct:__anon6
+unbuffered_http_output_t	include/nsshttp.h	/^typedef char unbuffered_http_output_t;$/;"	t
+unbuffered_http_stream_t	include/nsshttp.h	/^typedef struct FILE unbuffered_http_stream_t;$/;"	t	typeref:struct:FILE
+value	include/nsshttp.h	/^	char value[CFG_QS_VALUE_LENGTH];$/;"	m	struct:__anon1
+value_len	include/nsshttp.h	/^	int value_len;$/;"	m	struct:__anon1
