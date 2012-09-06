@@ -26,6 +26,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+static char path_separator = '/';
+
 continue_t http_init(http_context_t *ctx, FILE* stream) {
 	INIT_HTTP_CONTEXT_T(*ctx);
 	ctx->stream = stream;
@@ -35,6 +37,22 @@ continue_t http_init(http_context_t *ctx, FILE* stream) {
 	if (script_filename == NULL) {
 		http_die(ctx, "Ack! No SCRIPT_FILENAME environment variable!");
 	}
+
+	int copylen = 0;
+	char *last_sep = strrchr(script_filename, path_separator);
+
+	if (last_sep == NULL) {
+		http_die(ctx, "Ack! The server isn't giving me a path in SCRIPT_FILENAME");
+	}
+
+	copylen = (int)(last_sep - script_filename);
+	if (copylen >= PATH_LENGTH) {
+		http_die(ctx, "Ack! The path length is too long!");
+	}
+
+	strcpy(ctx->script_file, script_filename);
+	strncpy(ctx->script_path, script_filename, copylen);
+	ctx->script_path[copylen - 1] = '\0';
 
 	return CONTINUE_YES;
 }
@@ -74,6 +92,7 @@ continue_t http_output(
 	httpio_finish_headers(ctx->stream);
 
 	fputs(output, ctx->stream);
+	fprintf(ctx->stream, "<h1>PATH: '%s'</h1>", ctx->script_path);
 
 	return CONTINUE_YES;
 }

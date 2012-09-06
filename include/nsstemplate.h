@@ -21,6 +21,7 @@
 #define __NSSTEMPLATE_H__
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <nssweb_types.h>
 
 static char path_separator = '/';
@@ -54,7 +55,7 @@ typedef struct {
 	char base_path[TPL_FILE_PATH_LENGTH];
 	char template_file[TPL_FILE_PATH_LENGTH];
 	FILE* instream;
-	char _buff[TPL_BUFFER_LENGTH];
+	char *buffer;
 	template_error_t err;
 } template_context_t;
 
@@ -63,7 +64,8 @@ typedef struct {
 		(X).base_path[0] = '\0';						\
 		(X).template_file[0] = '\0';					\
 		(X).instream = NULL;							\
-		(X)._buff[0] = '\0';							\
+		(X).buffer = malloc(2 * sizeof(char));			\
+		(X).buffer[0] = '\0';							\
 		INIT_TEMPLATE_ERROR_T((X).err);					\
 	} while(0)
 

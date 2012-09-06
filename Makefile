@@ -29,10 +29,10 @@ RM = rm -f
 CFLAGS = -fPIC -ggdb3 -I$(INCDIR) -Wall
 
 LIBNSSHTTP_SRCS = $(SRCDIR)/nsshttp.c $(SRCDIR)/nsshttpio.c
-LIBNSSTEMPLATE_SRCS = $(SRCDIR)/nsstemplate.c
+LIBNSSTEMPLATE_SRCS = $(SRCDIR)/nsstemplate.c $(SRCDIR)/strmap.c $(SRCDIR)/nss_mutable_string.c
 
 LIBNSSHTTP_OBJS = $(OBJDIR)/nsshttp.o $(OBJDIR)/nsshttpio.o
-LIBNSSTEMPLATE_OBJS = $(OBJDIR)/nsstemplate.o
+LIBNSSTEMPLATE_OBJS = $(OBJDIR)/nsstemplate.o $(OBJDIR)/strmap.o $(SRCDIR)/nss_mutable_string.o
 
 LIBS = $(LIBDIR)/libnsshttp.a $(LIBDIR)/libnsstemplate.a
 #LIBS = $(LIBDIR)/libnsshttp.a
