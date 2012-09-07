@@ -128,18 +128,18 @@ typedef struct {
 #define ENV_SCRIPT_FILENAME			"SCRIPT_FILENAME"
 
 // Set up the HTTP context and session
-extern continue_t http_init(http_context_t *ctx, FILE* stream);
+continue_t http_init(http_context_t *ctx, FILE* stream);
 
-extern void http_set_status(http_context_t *ctx, http_status_t to_assign);
-extern void http_set_content_type(http_context_t *ctx, const char* cnt_type);
+void http_set_status(http_context_t *ctx, http_status_t to_assign);
+void http_set_content_type(http_context_t *ctx, const char* cnt_type);
 
 // Output some content
-extern continue_t http_output(http_context_t *ctx, const char* output);
+continue_t http_output(http_context_t *ctx, const char* output);
 
 // Clean up
-extern continue_t http_finish(http_context_t *ctx);
+continue_t http_finish(http_context_t *ctx);
 
 // Error out
-extern void http_die(http_context_t *ctx, char* errmsg);
+void http_die(http_context_t *ctx, char* errmsg);
 
 #endif

@@ -21,6 +21,8 @@
 #define __NSS_MUTABLE_STRING_H__
 
 #define INITIAL_MUTABLE_STRING_ALLOCATION	64
+// 1MiB is big enough
+#define MAXIMUM_MUTABLE_STRING_SIZE			(1024 * 1024)
 
 typedef struct {
 	char *data;
@@ -28,6 +30,7 @@ typedef struct {
 	int length;
 	char is_empty;
 } mutable_string_t;
+#define MUTSTR(X) mutable_string_get_data(X)
 
 mutable_string_t* mutable_string_init(mutable_string_t *target);
 mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_size);
@@ -40,7 +43,6 @@ mutable_string_t* mutable_string_append(mutable_string_t *dest, char *src);
 int mutable_string_get_length(mutable_string_t *var);
 short mutable_string_is_empty(mutable_string_t *var);
 char* mutable_string_get_data(mutable_string_t *var);
-mutable_string_t* mutable_string_clone(mutable_string_t *var);
 mutable_string_t* mutable_string_copy(mutable_string_t *dest, mutable_string_t *src);
 
 #endif

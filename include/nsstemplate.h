@@ -23,11 +23,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <nssweb_types.h>
+#include <nssweb_config.h>
+#include <nsstemplate_markup.h>
+#include <nss_mutable_string.h>
 
 static char path_separator = '/';
 
 #define TPL_FILE_PATH_LENGTH 	256
-#define TPL_BUFFER_LENGTH		2048
+#define TPL_BUFFER_LENGTH		CFG_MAX_BUFFER_LENGTH
 #define TPL_ERRSTR_LENGTH		(TPL_BUFFER_LENGTH + 1025)
 
 #define ERR_FATAL_YES			1
@@ -55,7 +58,8 @@ typedef struct {
 	char base_path[TPL_FILE_PATH_LENGTH];
 	char template_file[TPL_FILE_PATH_LENGTH];
 	FILE* instream;
-	char *buffer;
+	char in_markup;
+	mutable_string_t buffer;
 	template_error_t err;
 } template_context_t;
 
@@ -64,19 +68,21 @@ typedef struct {
 		(X).base_path[0] = '\0';						\
 		(X).template_file[0] = '\0';					\
 		(X).instream = NULL;							\
-		(X).buffer = malloc(2 * sizeof(char));			\
-		(X).buffer[0] = '\0';							\
+		(X).in_markup = 'F';							\
+		mutable_string_init(&(X).buffer);				\
 		INIT_TEMPLATE_ERROR_T((X).err);					\
 	} while(0)
 
 #define TEMPLATE_CHECK_ERROR(X)	((X).err.errstr[0] == '\0')
 
-extern continue_t template_init(
+continue_t template_init(
 	template_context_t* ctx,
 	char* path,
 	const char* template_file
 );
 
-extern continue_t template_finish(template_context_t *ctx);
+continue_t template_execute(template_context_t *ctx, FILE *outstream);
+
+continue_t template_finish(template_context_t *ctx);
 
 #endif

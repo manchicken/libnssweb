@@ -5,13 +5,13 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 AR	Makefile	/^AR = ar -cr$/;"	m
-BEGIN	defs/nsstemplate_markup.yy.c	/^#define BEGIN /;"	d	file:
 Bucket	src/strmap.c	/^struct Bucket {$/;"	s	file:
 Bucket	src/strmap.c	/^typedef struct Bucket Bucket;$/;"	t	typeref:struct:Bucket	file:
 CC	Makefile	/^CC = gcc$/;"	m
 CFG_CONTENT_LENGTH_LIMIT	include/nssweb_config.h	/^#define CFG_CONTENT_LENGTH_LIMIT /;"	d
 CFG_HTTP_HEADER_ENTITY_LENGTH	include/nssweb_config.h	/^#define CFG_HTTP_HEADER_ENTITY_LENGTH /;"	d
 CFG_HTTP_HEADER_LINE_LENGTH	include/nssweb_config.h	/^#define CFG_HTTP_HEADER_LINE_LENGTH /;"	d
+CFG_MAX_BUFFER_LENGTH	include/nssweb_config.h	/^#define CFG_MAX_BUFFER_LENGTH	/;"	d
 CFG_QS_ENTRY_LIMIT	include/nssweb_config.h	/^#define CFG_QS_ENTRY_LIMIT /;"	d
 CFG_QS_KEY_LENGTH	include/nssweb_config.h	/^#define CFG_QS_KEY_LENGTH /;"	d
 CFG_QS_VALUE_LENGTH	include/nssweb_config.h	/^#define CFG_QS_VALUE_LENGTH /;"	d
@@ -22,18 +22,11 @@ CONTENT_TYPE_TEXT_HTML	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TEX
 CONTENT_TYPE_TEXT_PLAIN	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TEXT_PLAIN	/;"	d
 CONTINUE_NO	include/nssweb_types.h	/^#define CONTINUE_NO	/;"	d
 CONTINUE_YES	include/nssweb_types.h	/^#define CONTINUE_YES	/;"	d
-ECHO	defs/nsstemplate_markup.yy.c	/^#define ECHO /;"	d	file:
 ENV_SCRIPT_FILENAME	include/nsshttp.h	/^#define ENV_SCRIPT_FILENAME	/;"	d
-EOB_ACT_CONTINUE_SCAN	defs/nsstemplate_markup.yy.c	/^#define EOB_ACT_CONTINUE_SCAN /;"	d	file:
-EOB_ACT_END_OF_FILE	defs/nsstemplate_markup.yy.c	/^#define EOB_ACT_END_OF_FILE /;"	d	file:
-EOB_ACT_LAST_MATCH	defs/nsstemplate_markup.yy.c	/^#define EOB_ACT_LAST_MATCH /;"	d	file:
 ERR_FATAL_NO	include/nsstemplate.h	/^#define ERR_FATAL_NO	/;"	d
 ERR_FATAL_YES	include/nsstemplate.h	/^#define ERR_FATAL_YES	/;"	d
 ERR_TPL_CONTENT_NO	include/nsstemplate.h	/^#define ERR_TPL_CONTENT_NO	/;"	d
 ERR_TPL_CONTENT_YES	include/nsstemplate.h	/^#define ERR_TPL_CONTENT_YES	/;"	d
-FLEXINT_H	defs/nsstemplate_markup.yy.c	/^#define FLEXINT_H$/;"	d	file:
-FLEX_BETA	defs/nsstemplate_markup.yy.c	/^#define FLEX_BETA$/;"	d	file:
-FLEX_SCANNER	defs/nsstemplate_markup.yy.c	/^#define FLEX_SCANNER$/;"	d	file:
 HTTPIO_HEADER_FINISH	include/nsshttpio.h	/^#define HTTPIO_HEADER_FINISH /;"	d
 HTTPIO_HEADER_LINE_ENDING	include/nsshttpio.h	/^#define HTTPIO_HEADER_LINE_ENDING /;"	d
 HTTPIO_LINE_ENDING	include/nsshttpio.h	/^#define HTTPIO_LINE_ENDING /;"	d
@@ -73,7 +66,6 @@ HTTP_STATUS_LINE_LENGTH	include/nsshttp_status.h	/^#define HTTP_STATUS_LINE_LENG
 HTTP_STATUS_OK	include/nsshttp_status.h	/^#define HTTP_STATUS_OK /;"	d
 HTTP_UNKNOWN_ERROR	include/nsshttp.h	/^#define HTTP_UNKNOWN_ERROR	/;"	d
 INCDIR	Makefile	/^INCDIR = .\/include$/;"	m
-INITIAL	defs/nsstemplate_markup.yy.c	/^#define INITIAL /;"	d	file:
 INITIAL_MUTABLE_STRING_ALLOCATION	include/nss_mutable_string.h	/^#define INITIAL_MUTABLE_STRING_ALLOCATION	/;"	d
 INIT_HTTP_CONTENT_TYPE	include/nsshttp_content_type.h	/^#define INIT_HTTP_CONTENT_TYPE(/;"	d
 INIT_HTTP_CONTEXT_T	include/nsshttp.h	/^#define INIT_HTTP_CONTEXT_T(/;"	d
@@ -87,12 +79,6 @@ INIT_QS_ENTRY_T	include/nsshttp.h	/^#define INIT_QS_ENTRY_T(/;"	d
 INIT_QUERY_STRING_T	include/nsshttp.h	/^#define INIT_QUERY_STRING_T(/;"	d
 INIT_TEMPLATE_CONTEXT_T	include/nsstemplate.h	/^#define INIT_TEMPLATE_CONTEXT_T(/;"	d
 INIT_TEMPLATE_ERROR_T	include/nsstemplate.h	/^#define INIT_TEMPLATE_ERROR_T(/;"	d
-INT16_MAX	defs/nsstemplate_markup.yy.c	/^#define INT16_MAX /;"	d	file:
-INT16_MIN	defs/nsstemplate_markup.yy.c	/^#define INT16_MIN /;"	d	file:
-INT32_MAX	defs/nsstemplate_markup.yy.c	/^#define INT32_MAX /;"	d	file:
-INT32_MIN	defs/nsstemplate_markup.yy.c	/^#define INT32_MIN /;"	d	file:
-INT8_MAX	defs/nsstemplate_markup.yy.c	/^#define INT8_MAX /;"	d	file:
-INT8_MIN	defs/nsstemplate_markup.yy.c	/^#define INT8_MIN /;"	d	file:
 LIBDIR	Makefile	/^LIBDIR = .\/lib$/;"	m
 LIBNSSHTTP_OBJS	Makefile	/^LIBNSSHTTP_OBJS = $(OBJDIR)\/nsshttp.o $(OBJDIR)\/nsshttpio.o$/;"	m
 LIBNSSHTTP_SRCS	Makefile	/^LIBNSSHTTP_SRCS = $(SRCDIR)\/nsshttp.c $(SRCDIR)\/nsshttpio.c$/;"	m
@@ -100,17 +86,19 @@ LIBNSSTEMPLATE_OBJS	Makefile	/^LIBNSSTEMPLATE_OBJS = $(OBJDIR)\/nsstemplate.o $(
 LIBNSSTEMPLATE_SRCS	Makefile	/^LIBNSSTEMPLATE_SRCS = $(SRCDIR)\/nsstemplate.c $(SRCDIR)\/strmap.c $(SRCDIR)\/nss_mutable_string.c$/;"	m
 LIBS	Makefile	/^LIBS = $(LIBDIR)\/libnsshttp.a $(LIBDIR)\/libnsstemplate.a$/;"	m
 MAKE_HTTP_STATUS	include/nsshttp_status.h	/^#define MAKE_HTTP_STATUS(/;"	d
+MAXIMUM_MUTABLE_STRING_SIZE	include/nss_mutable_string.h	/^#define MAXIMUM_MUTABLE_STRING_SIZE	/;"	d
+MUTSTR	include/nss_mutable_string.h	/^#define MUTSTR(/;"	d
 NST_KEYWORD_IF_ELSE	include/nsstemplate_markup.h	/^#define NST_KEYWORD_IF_ELSE	/;"	d
 NST_KEYWORD_IF_START	include/nsstemplate_markup.h	/^#define NST_KEYWORD_IF_START	/;"	d
 NST_KEYWORD_IF_STOP	include/nsstemplate_markup.h	/^#define NST_KEYWORD_IF_STOP	/;"	d
 NST_KEYWORD_LOOP_CONDITION	include/nsstemplate_markup.h	/^#define NST_KEYWORD_LOOP_CONDITION	/;"	d
 NST_KEYWORD_LOOP_START	include/nsstemplate_markup.h	/^#define NST_KEYWORD_LOOP_START	/;"	d
 NST_KEYWORD_LOOP_STOP	include/nsstemplate_markup.h	/^#define NST_KEYWORD_LOOP_STOP	/;"	d
-NST_MACROSTART_LEFT	include/nsstemplate_markup.h	/^#define NST_MACROSTART_LEFT	/;"	d
-NST_MACROSTART_RIGHT	include/nsstemplate_markup.h	/^#define NST_MACROSTART_RIGHT	/;"	d
-NST_MACROSTOP_LEFT	include/nsstemplate_markup.h	/^#define NST_MACROSTOP_LEFT	/;"	d
-NST_MACROSTOP_RIGHT	include/nsstemplate_markup.h	/^#define NST_MACROSTOP_RIGHT	/;"	d
-NST_MAX_BUFFER_SIZE	include/nsstemplate_markup.h	/^#define NST_MAX_BUFFER_SIZE	/;"	d
+NST_MARKUPSTART_LEFT	include/nsstemplate_markup.h	/^#define NST_MARKUPSTART_LEFT	/;"	d
+NST_MARKUPSTART_RIGHT	include/nsstemplate_markup.h	/^#define NST_MARKUPSTART_RIGHT	/;"	d
+NST_MARKUPSTOP_LEFT	include/nsstemplate_markup.h	/^#define NST_MARKUPSTOP_LEFT	/;"	d
+NST_MARKUPSTOP_RIGHT	include/nsstemplate_markup.h	/^#define NST_MARKUPSTOP_RIGHT	/;"	d
+NST_MAX_BUFFER	include/nsstemplate_markup.h	/^#define NST_MAX_BUFFER	/;"	d
 NST_OPERATOR_ASSIGN	include/nsstemplate_markup.h	/^#define NST_OPERATOR_ASSIGN	/;"	d
 NST_OPERATOR_EQ	include/nsstemplate_markup.h	/^#define NST_OPERATOR_EQ	/;"	d
 OBJDIR	Makefile	/^OBJDIR = .\/obj$/;"	m
@@ -118,7 +106,6 @@ PATH_LENGTH	include/nsshttp.h	/^#define PATH_LENGTH /;"	d
 Pair	src/strmap.c	/^struct Pair {$/;"	s	file:
 Pair	src/strmap.c	/^typedef struct Pair Pair;$/;"	t	typeref:struct:Pair	file:
 RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
-REJECT	defs/nsstemplate_markup.yy.c	/^#define REJECT /;"	d	file:
 RM	Makefile	/^RM = rm -f$/;"	m
 SRCDIR	Makefile	/^SRCDIR = .\/src$/;"	m
 StrMap	include/strmap.h	/^typedef struct StrMap StrMap;$/;"	t	typeref:struct:StrMap
@@ -127,53 +114,6 @@ TEMPLATE_CHECK_ERROR	include/nsstemplate.h	/^#define TEMPLATE_CHECK_ERROR(/;"	d
 TPL_BUFFER_LENGTH	include/nsstemplate.h	/^#define TPL_BUFFER_LENGTH	/;"	d
 TPL_ERRSTR_LENGTH	include/nsstemplate.h	/^#define TPL_ERRSTR_LENGTH	/;"	d
 TPL_FILE_PATH_LENGTH	include/nsstemplate.h	/^#define TPL_FILE_PATH_LENGTH /;"	d
-UINT16_MAX	defs/nsstemplate_markup.yy.c	/^#define UINT16_MAX /;"	d	file:
-UINT32_MAX	defs/nsstemplate_markup.yy.c	/^#define UINT32_MAX /;"	d	file:
-UINT8_MAX	defs/nsstemplate_markup.yy.c	/^#define UINT8_MAX /;"	d	file:
-YYSTATE	defs/nsstemplate_markup.yy.c	/^#define YYSTATE /;"	d	file:
-YYTABLES_NAME	defs/nsstemplate_markup.yy.c	/^#define YYTABLES_NAME /;"	d	file:
-YY_AT_BOL	defs/nsstemplate_markup.yy.c	/^#define YY_AT_BOL(/;"	d	file:
-YY_BREAK	defs/nsstemplate_markup.yy.c	/^#define YY_BREAK /;"	d	file:
-YY_BUFFER_EOF_PENDING	defs/nsstemplate_markup.yy.c	/^#define YY_BUFFER_EOF_PENDING /;"	d	file:
-YY_BUFFER_NEW	defs/nsstemplate_markup.yy.c	/^#define YY_BUFFER_NEW /;"	d	file:
-YY_BUFFER_NORMAL	defs/nsstemplate_markup.yy.c	/^#define YY_BUFFER_NORMAL /;"	d	file:
-YY_BUFFER_STATE	defs/nsstemplate_markup.yy.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/;"	t	typeref:struct:yy_buffer_state	file:
-YY_BUF_SIZE	defs/nsstemplate_markup.yy.c	/^#define YY_BUF_SIZE /;"	d	file:
-YY_CHAR	defs/nsstemplate_markup.yy.c	/^typedef unsigned char YY_CHAR;$/;"	t	file:
-YY_CURRENT_BUFFER	defs/nsstemplate_markup.yy.c	/^#define YY_CURRENT_BUFFER /;"	d	file:
-YY_CURRENT_BUFFER_LVALUE	defs/nsstemplate_markup.yy.c	/^#define YY_CURRENT_BUFFER_LVALUE /;"	d	file:
-YY_DECL	defs/nsstemplate_markup.yy.c	/^#define YY_DECL /;"	d	file:
-YY_DECL_IS_OURS	defs/nsstemplate_markup.yy.c	/^#define YY_DECL_IS_OURS /;"	d	file:
-YY_DO_BEFORE_ACTION	defs/nsstemplate_markup.yy.c	/^#define YY_DO_BEFORE_ACTION /;"	d	file:
-YY_END_OF_BUFFER	defs/nsstemplate_markup.yy.c	/^#define YY_END_OF_BUFFER /;"	d	file:
-YY_END_OF_BUFFER_CHAR	defs/nsstemplate_markup.yy.c	/^#define YY_END_OF_BUFFER_CHAR /;"	d	file:
-YY_EXIT_FAILURE	defs/nsstemplate_markup.yy.c	/^#define YY_EXIT_FAILURE /;"	d	file:
-YY_EXTRA_TYPE	defs/nsstemplate_markup.yy.c	/^#define YY_EXTRA_TYPE /;"	d	file:
-YY_FATAL_ERROR	defs/nsstemplate_markup.yy.c	/^#define YY_FATAL_ERROR(/;"	d	file:
-YY_FLEX_MAJOR_VERSION	defs/nsstemplate_markup.yy.c	/^#define YY_FLEX_MAJOR_VERSION /;"	d	file:
-YY_FLEX_MINOR_VERSION	defs/nsstemplate_markup.yy.c	/^#define YY_FLEX_MINOR_VERSION /;"	d	file:
-YY_FLEX_SUBMINOR_VERSION	defs/nsstemplate_markup.yy.c	/^#define YY_FLEX_SUBMINOR_VERSION /;"	d	file:
-YY_FLUSH_BUFFER	defs/nsstemplate_markup.yy.c	/^#define YY_FLUSH_BUFFER /;"	d	file:
-YY_INPUT	defs/nsstemplate_markup.yy.c	/^#define YY_INPUT(/;"	d	file:
-YY_INT_ALIGNED	defs/nsstemplate_markup.yy.c	/^#define  YY_INT_ALIGNED /;"	d	file:
-YY_LESS_LINENO	defs/nsstemplate_markup.yy.c	/^    #define YY_LESS_LINENO(/;"	d	file:
-YY_MORE_ADJ	defs/nsstemplate_markup.yy.c	/^#define YY_MORE_ADJ /;"	d	file:
-YY_NEW_FILE	defs/nsstemplate_markup.yy.c	/^#define YY_NEW_FILE /;"	d	file:
-YY_NULL	defs/nsstemplate_markup.yy.c	/^#define YY_NULL /;"	d	file:
-YY_NUM_RULES	defs/nsstemplate_markup.yy.c	/^#define YY_NUM_RULES /;"	d	file:
-YY_READ_BUF_SIZE	defs/nsstemplate_markup.yy.c	/^#define YY_READ_BUF_SIZE /;"	d	file:
-YY_RESTORE_YY_MORE_OFFSET	defs/nsstemplate_markup.yy.c	/^#define YY_RESTORE_YY_MORE_OFFSET$/;"	d	file:
-YY_RULE_SETUP	defs/nsstemplate_markup.yy.c	/^#define YY_RULE_SETUP /;"	d	file:
-YY_SC_TO_UI	defs/nsstemplate_markup.yy.c	/^#define YY_SC_TO_UI(/;"	d	file:
-YY_START	defs/nsstemplate_markup.yy.c	/^#define YY_START /;"	d	file:
-YY_START_STACK_INCR	defs/nsstemplate_markup.yy.c	/^#define YY_START_STACK_INCR /;"	d	file:
-YY_STATE_BUF_SIZE	defs/nsstemplate_markup.yy.c	/^#define YY_STATE_BUF_SIZE /;"	d	file:
-YY_STATE_EOF	defs/nsstemplate_markup.yy.c	/^#define YY_STATE_EOF(/;"	d	file:
-YY_STRUCT_YY_BUFFER_STATE	defs/nsstemplate_markup.yy.c	/^#define YY_STRUCT_YY_BUFFER_STATE$/;"	d	file:
-YY_TYPEDEF_YY_BUFFER_STATE	defs/nsstemplate_markup.yy.c	/^#define YY_TYPEDEF_YY_BUFFER_STATE$/;"	d	file:
-YY_TYPEDEF_YY_SIZE_T	defs/nsstemplate_markup.yy.c	/^#define YY_TYPEDEF_YY_SIZE_T$/;"	d	file:
-YY_USER_ACTION	defs/nsstemplate_markup.yy.c	/^#define YY_USER_ACTION$/;"	d	file:
-YY_USE_CONST	defs/nsstemplate_markup.yy.c	/^#define YY_USE_CONST$/;"	d	file:
 _STRMAP_H_	include/strmap.h	/^#define _STRMAP_H_$/;"	d
 __NSSHTTPIO_H__	include/nsshttpio.h	/^#define __NSSHTTPIO_H__$/;"	d
 __NSSHTTP_CONTENT_TYPE_H__	include/nsshttp_content_type.h	/^#define __NSSHTTP_CONTENT_TYPE_H__$/;"	d
@@ -186,13 +126,12 @@ __NSSWEB_CONFIG_H__	include/nssweb_config.h	/^#define __NSSWEB_CONFIG_H__$/;"	d
 __NSSWEB_H__	include/nssweb.h	/^#define __NSSWEB_H__$/;"	d
 __NSSWEB_TYPES_H__	include/nssweb_types.h	/^#define __NSSWEB_TYPES_H__$/;"	d
 __NSS_MUTABLE_STRING_H__	include/nss_mutable_string.h	/^#define __NSS_MUTABLE_STRING_H__$/;"	d
-__STDC_LIMIT_MACROS	defs/nsstemplate_markup.yy.c	/^#define __STDC_LIMIT_MACROS /;"	d	file:
+_calculate_new_size	src/nss_mutable_string.c	/^inline size_t _calculate_new_size(size_t str_length) {$/;"	f
 _data_size	include/nss_mutable_string.h	/^	size_t _data_size;$/;"	m	struct:__anon1
 _tpl_symbols	src/nsstemplate_markup.c	/^static StrMap *_tpl_symbols;$/;"	v	file:
 base_path	include/nsstemplate.h	/^	char base_path[TPL_FILE_PATH_LENGTH];$/;"	m	struct:__anon10
 buckets	src/strmap.c	/^	Bucket *buckets;$/;"	m	struct:StrMap	file:
-buffer	include/nsstemplate.h	/^	char *buffer;$/;"	m	struct:__anon10
-commands	defs/nsstemplate_markup.y	/^commands:$/;"	l
+buffer	include/nsstemplate.h	/^	mutable_string_t buffer;$/;"	m	struct:__anon10
 content_type	include/nsshttp.h	/^	char content_type[CFG_CONTENT_LENGTH_LIMIT];$/;"	m	struct:__anon5
 continue_t	include/nssweb_types.h	/^typedef short continue_t;$/;"	t
 count	src/strmap.c	/^	unsigned int count;$/;"	m	struct:Bucket	file:
@@ -207,19 +146,6 @@ errnum	include/nsstemplate.h	/^	int errnum;$/;"	m	struct:__anon9
 error_source	include/nsshttp.h	/^	int error_source;$/;"	m	struct:__anon6
 errstr	include/nsshttp.h	/^	char errstr[HTTP_ERRSTR_LENGTH];$/;"	m	struct:__anon6
 errstr	include/nsstemplate.h	/^	char errstr[TPL_ERRSTR_LENGTH];$/;"	m	struct:__anon9
-flex_int16_t	defs/nsstemplate_markup.yy.c	/^typedef int16_t flex_int16_t;$/;"	t	file:
-flex_int16_t	defs/nsstemplate_markup.yy.c	/^typedef short int flex_int16_t;$/;"	t	file:
-flex_int32_t	defs/nsstemplate_markup.yy.c	/^typedef int flex_int32_t;$/;"	t	file:
-flex_int32_t	defs/nsstemplate_markup.yy.c	/^typedef int32_t flex_int32_t;$/;"	t	file:
-flex_int8_t	defs/nsstemplate_markup.yy.c	/^typedef int8_t flex_int8_t;$/;"	t	file:
-flex_int8_t	defs/nsstemplate_markup.yy.c	/^typedef signed char flex_int8_t;$/;"	t	file:
-flex_uint16_t	defs/nsstemplate_markup.yy.c	/^typedef uint16_t flex_uint16_t;$/;"	t	file:
-flex_uint16_t	defs/nsstemplate_markup.yy.c	/^typedef unsigned short int flex_uint16_t;$/;"	t	file:
-flex_uint32_t	defs/nsstemplate_markup.yy.c	/^typedef uint32_t flex_uint32_t;$/;"	t	file:
-flex_uint32_t	defs/nsstemplate_markup.yy.c	/^typedef unsigned int flex_uint32_t;$/;"	t	file:
-flex_uint64_t	defs/nsstemplate_markup.yy.c	/^typedef uint64_t flex_uint64_t;$/;"	t	file:
-flex_uint8_t	defs/nsstemplate_markup.yy.c	/^typedef uint8_t flex_uint8_t;$/;"	t	file:
-flex_uint8_t	defs/nsstemplate_markup.yy.c	/^typedef unsigned char flex_uint8_t; $/;"	t	file:
 get_pair	src/strmap.c	/^static Pair * get_pair(Bucket *bucket, const char *key)$/;"	f	file:
 hash	src/strmap.c	/^static unsigned long hash(const char *str)$/;"	f	file:
 http_context_t	include/nsshttp.h	/^} http_context_t;$/;"	t	typeref:struct:__anon7
@@ -236,6 +162,7 @@ http_status_t	include/nsshttp_status.h	/^} http_status_t;$/;"	t	typeref:struct:_
 httpio_finish_headers	src/nsshttpio.c	/^int httpio_finish_headers(FILE* stream) {$/;"	f
 httpio_finish_output	src/nsshttpio.c	/^void httpio_finish_output(FILE* stream) {$/;"	f
 httpio_print_header	src/nsshttpio.c	/^int httpio_print_header(FILE* stream, const char* field, const char* value) {$/;"	f
+in_markup	include/nsstemplate.h	/^	char in_markup;$/;"	m	struct:__anon10
 instream	include/nsstemplate.h	/^	FILE* instream;$/;"	m	struct:__anon10
 is_empty	include/nss_mutable_string.h	/^	char is_empty;$/;"	m	struct:__anon1
 is_fatal	include/nsshttp.h	/^	int is_fatal;$/;"	m	struct:__anon6
@@ -246,16 +173,22 @@ key	src/strmap.c	/^	char *key;$/;"	m	struct:Pair	file:
 key_len	include/nsshttp.h	/^	int key_len;$/;"	m	struct:__anon2
 length	include/nss_mutable_string.h	/^	int length;$/;"	m	struct:__anon1
 line	include/nsshttp_status.h	/^	char line[HTTP_STATUS_LINE_LENGTH];$/;"	m	struct:__anon8
+markup_find_token	src/nsstemplate_markup.c	/^char* markup_find_token(const char *buffer, const char *token) {$/;"	f
+markup_get_start_left	include/nsstemplate_markup.h	/^#define markup_get_start_left(/;"	d
+markup_get_start_right	include/nsstemplate_markup.h	/^#define markup_get_start_right(/;"	d
+markup_get_stop_left	include/nsstemplate_markup.h	/^#define markup_get_stop_left(/;"	d
+markup_get_stop_right	include/nsstemplate_markup.h	/^#define markup_get_stop_right(/;"	d
+markup_has_left_token	include/nsstemplate_markup.h	/^#define markup_has_left_token(/;"	d
+markup_which_token_is_this	src/nsstemplate_markup.c	/^const char* markup_which_token_is_this(const char *buffer) {$/;"	f
 mutable_string_append	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_append(mutable_string_t *dest, char *src) {$/;"	f
 mutable_string_assign	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_assign(mutable_string_t *dest, char *src) {$/;"	f
-mutable_string_clone	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_clone(mutable_string_t *var) {$/;"	f
-mutable_string_copy	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_copy(mutable_string_t *dest, mutable_string_t *src) {$/;"	f
+mutable_string_copy	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_copy(mutable_string_t *dest, mutable_string_t *src)$/;"	f
 mutable_string_free	src/nss_mutable_string.c	/^void mutable_string_free(mutable_string_t *target) {$/;"	f
 mutable_string_get_data	src/nss_mutable_string.c	/^char* mutable_string_get_data(mutable_string_t *var) {$/;"	f
 mutable_string_get_length	src/nss_mutable_string.c	/^int mutable_string_get_length(mutable_string_t *var) {$/;"	f
 mutable_string_init	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_init(mutable_string_t *target) {$/;"	f
 mutable_string_is_empty	src/nss_mutable_string.c	/^short mutable_string_is_empty(mutable_string_t *var) {$/;"	f
-mutable_string_resize	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_size) {$/;"	f
+mutable_string_resize	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_size)$/;"	f
 mutable_string_t	include/nss_mutable_string.h	/^} mutable_string_t;$/;"	t	typeref:struct:__anon1
 pairs	src/strmap.c	/^	Pair *pairs;$/;"	m	struct:Bucket	file:
 path_separator	include/nsstemplate.h	/^static char path_separator = '\/';$/;"	v
@@ -266,6 +199,7 @@ query_string_t	include/nsshttp.h	/^} query_string_t;$/;"	t	typeref:struct:__anon
 request_header	include/nsshttp.h	/^	http_request_header_t request_header;$/;"	m	struct:__anon7
 request_uri	include/nsshttp.h	/^	char request_uri[CFG_REQUEST_URI_LENGTH];$/;"	m	struct:__anon4
 response_header	include/nsshttp.h	/^	http_response_header_t response_header;$/;"	m	struct:__anon7
+scoot_ahead_to_right_token	src/nsstemplate.c	/^inline char *scoot_ahead_to_right_token(char *chunk) {$/;"	f
 script_file	include/nsshttp.h	/^	char script_file[PATH_LENGTH];$/;"	m	struct:__anon7
 script_path	include/nsshttp.h	/^	char script_path[PATH_LENGTH];$/;"	m	struct:__anon7
 sm_delete	src/strmap.c	/^void sm_delete(StrMap *map)$/;"	f
@@ -281,99 +215,11 @@ status	include/nsshttp_status.h	/^	short status;$/;"	m	struct:__anon8
 stream	include/nsshttp.h	/^	FILE* stream;$/;"	m	struct:__anon7
 template_context_t	include/nsstemplate.h	/^} template_context_t;$/;"	t	typeref:struct:__anon10
 template_error_t	include/nsstemplate.h	/^} template_error_t;$/;"	t	typeref:struct:__anon9
+template_execute	src/nsstemplate.c	/^continue_t template_execute(template_context_t *ctx, FILE *outstream) {$/;"	f
 template_file	include/nsstemplate.h	/^	char template_file[TPL_FILE_PATH_LENGTH];$/;"	m	struct:__anon10
 template_finish	src/nsstemplate.c	/^continue_t template_finish(template_context_t *ctx) {$/;"	f
 template_init	src/nsstemplate.c	/^continue_t template_init($/;"	f
 template_set_error_to_errno	src/nsstemplate.c	/^void template_set_error_to_errno($/;"	f
-unput	defs/nsstemplate_markup.yy.c	/^#define unput(/;"	d	file:
 value	include/nsshttp.h	/^	char value[CFG_QS_VALUE_LENGTH];$/;"	m	struct:__anon2
 value	src/strmap.c	/^	char *value;$/;"	m	struct:Pair	file:
 value_len	include/nsshttp.h	/^	int value_len;$/;"	m	struct:__anon2
-yy_accept	defs/nsstemplate_markup.yy.c	/^static yyconst flex_int16_t yy_accept[11] =$/;"	v	file:
-yy_at_bol	defs/nsstemplate_markup.yy.c	/^	int yy_at_bol;$/;"	m	struct:yy_buffer_state	file:
-yy_base	defs/nsstemplate_markup.yy.c	/^static yyconst flex_int16_t yy_base[13] =$/;"	v	file:
-yy_bs_column	defs/nsstemplate_markup.yy.c	/^    int yy_bs_column; \/**< The column count. *\/$/;"	m	struct:yy_buffer_state	file:
-yy_bs_lineno	defs/nsstemplate_markup.yy.c	/^    int yy_bs_lineno; \/**< The line count. *\/$/;"	m	struct:yy_buffer_state	file:
-yy_buf_pos	defs/nsstemplate_markup.yy.c	/^	char *yy_buf_pos;		\/* current position in input buffer *\/$/;"	m	struct:yy_buffer_state	file:
-yy_buf_size	defs/nsstemplate_markup.yy.c	/^	yy_size_t yy_buf_size;$/;"	m	struct:yy_buffer_state	file:
-yy_buffer_stack	defs/nsstemplate_markup.yy.c	/^static YY_BUFFER_STATE * yy_buffer_stack = 0; \/**< Stack as an array. *\/$/;"	v	file:
-yy_buffer_stack_max	defs/nsstemplate_markup.yy.c	/^static size_t yy_buffer_stack_max = 0; \/**< capacity of stack. *\/$/;"	v	file:
-yy_buffer_stack_top	defs/nsstemplate_markup.yy.c	/^static size_t yy_buffer_stack_top = 0; \/**< index of top of stack. *\/$/;"	v	file:
-yy_buffer_state	defs/nsstemplate_markup.yy.c	/^struct yy_buffer_state$/;"	s	file:
-yy_buffer_status	defs/nsstemplate_markup.yy.c	/^	int yy_buffer_status;$/;"	m	struct:yy_buffer_state	file:
-yy_c_buf_p	defs/nsstemplate_markup.yy.c	/^static char *yy_c_buf_p = (char *) 0;$/;"	v	file:
-yy_ch_buf	defs/nsstemplate_markup.yy.c	/^	char *yy_ch_buf;		\/* input buffer *\/$/;"	m	struct:yy_buffer_state	file:
-yy_chk	defs/nsstemplate_markup.yy.c	/^static yyconst flex_int16_t yy_chk[15] =$/;"	v	file:
-yy_create_buffer	defs/nsstemplate_markup.yy.c	/^    YY_BUFFER_STATE yy_create_buffer  (FILE * file, int  size )$/;"	f
-yy_def	defs/nsstemplate_markup.yy.c	/^static yyconst flex_int16_t yy_def[13] =$/;"	v	file:
-yy_delete_buffer	defs/nsstemplate_markup.yy.c	/^    void yy_delete_buffer (YY_BUFFER_STATE  b )$/;"	f
-yy_did_buffer_switch_on_eof	defs/nsstemplate_markup.yy.c	/^static int yy_did_buffer_switch_on_eof;$/;"	v	file:
-yy_ec	defs/nsstemplate_markup.yy.c	/^static yyconst flex_int32_t yy_ec[256] =$/;"	v	file:
-yy_fatal_error	defs/nsstemplate_markup.yy.c	/^static void yy_fatal_error (yyconst char* msg )$/;"	f	file:
-yy_fill_buffer	defs/nsstemplate_markup.yy.c	/^	int yy_fill_buffer;$/;"	m	struct:yy_buffer_state	file:
-yy_flex_debug	defs/nsstemplate_markup.yy.c	/^int yy_flex_debug = 0;$/;"	v
-yy_flex_strlen	defs/nsstemplate_markup.yy.c	/^static int yy_flex_strlen (yyconst char * s )$/;"	f	file:
-yy_flex_strncpy	defs/nsstemplate_markup.yy.c	/^static void yy_flex_strncpy (char* s1, yyconst char * s2, int n )$/;"	f	file:
-yy_flush_buffer	defs/nsstemplate_markup.yy.c	/^    void yy_flush_buffer (YY_BUFFER_STATE  b )$/;"	f
-yy_get_next_buffer	defs/nsstemplate_markup.yy.c	/^static int yy_get_next_buffer (void)$/;"	f	file:
-yy_get_previous_state	defs/nsstemplate_markup.yy.c	/^    static yy_state_type yy_get_previous_state (void)$/;"	f	file:
-yy_hold_char	defs/nsstemplate_markup.yy.c	/^static char yy_hold_char;$/;"	v	file:
-yy_init	defs/nsstemplate_markup.yy.c	/^static int yy_init = 0;		\/* whether we need to initialize *\/$/;"	v	file:
-yy_init_buffer	defs/nsstemplate_markup.yy.c	/^    static void yy_init_buffer  (YY_BUFFER_STATE  b, FILE * file )$/;"	f	file:
-yy_init_globals	defs/nsstemplate_markup.yy.c	/^static int yy_init_globals (void)$/;"	f	file:
-yy_input_file	defs/nsstemplate_markup.yy.c	/^	FILE *yy_input_file;$/;"	m	struct:yy_buffer_state	file:
-yy_is_interactive	defs/nsstemplate_markup.yy.c	/^	int yy_is_interactive;$/;"	m	struct:yy_buffer_state	file:
-yy_is_our_buffer	defs/nsstemplate_markup.yy.c	/^	int yy_is_our_buffer;$/;"	m	struct:yy_buffer_state	file:
-yy_last_accepting_cpos	defs/nsstemplate_markup.yy.c	/^static char *yy_last_accepting_cpos;$/;"	v	file:
-yy_last_accepting_state	defs/nsstemplate_markup.yy.c	/^static yy_state_type yy_last_accepting_state;$/;"	v	file:
-yy_load_buffer_state	defs/nsstemplate_markup.yy.c	/^static void yy_load_buffer_state  (void)$/;"	f	file:
-yy_meta	defs/nsstemplate_markup.yy.c	/^static yyconst flex_int32_t yy_meta[6] =$/;"	v	file:
-yy_n_chars	defs/nsstemplate_markup.yy.c	/^	yy_size_t yy_n_chars;$/;"	m	struct:yy_buffer_state	file:
-yy_n_chars	defs/nsstemplate_markup.yy.c	/^static yy_size_t yy_n_chars;		\/* number of characters read into yy_ch_buf *\/$/;"	v	file:
-yy_new_buffer	defs/nsstemplate_markup.yy.c	/^#define yy_new_buffer /;"	d	file:
-yy_nxt	defs/nsstemplate_markup.yy.c	/^	flex_int32_t yy_nxt;$/;"	m	struct:yy_trans_info	file:
-yy_nxt	defs/nsstemplate_markup.yy.c	/^static yyconst flex_int16_t yy_nxt[15] =$/;"	v	file:
-yy_scan_buffer	defs/nsstemplate_markup.yy.c	/^YY_BUFFER_STATE yy_scan_buffer  (char * base, yy_size_t  size )$/;"	f
-yy_scan_bytes	defs/nsstemplate_markup.yy.c	/^YY_BUFFER_STATE yy_scan_bytes  (yyconst char * yybytes, yy_size_t  _yybytes_len )$/;"	f
-yy_scan_string	defs/nsstemplate_markup.yy.c	/^YY_BUFFER_STATE yy_scan_string (yyconst char * yystr )$/;"	f
-yy_set_bol	defs/nsstemplate_markup.yy.c	/^#define yy_set_bol(/;"	d	file:
-yy_set_interactive	defs/nsstemplate_markup.yy.c	/^#define yy_set_interactive(/;"	d	file:
-yy_size_t	defs/nsstemplate_markup.yy.c	/^typedef size_t yy_size_t;$/;"	t	file:
-yy_start	defs/nsstemplate_markup.yy.c	/^static int yy_start = 0;	\/* start state number *\/$/;"	v	file:
-yy_state_type	defs/nsstemplate_markup.yy.c	/^typedef int yy_state_type;$/;"	t	file:
-yy_switch_to_buffer	defs/nsstemplate_markup.yy.c	/^    void yy_switch_to_buffer  (YY_BUFFER_STATE  new_buffer )$/;"	f
-yy_trans_info	defs/nsstemplate_markup.yy.c	/^struct yy_trans_info$/;"	s	file:
-yy_try_NUL_trans	defs/nsstemplate_markup.yy.c	/^    static yy_state_type yy_try_NUL_trans  (yy_state_type yy_current_state )$/;"	f	file:
-yy_verify	defs/nsstemplate_markup.yy.c	/^	flex_int32_t yy_verify;$/;"	m	struct:yy_trans_info	file:
-yyalloc	defs/nsstemplate_markup.yy.c	/^void *yyalloc (yy_size_t  size )$/;"	f
-yyconst	defs/nsstemplate_markup.yy.c	/^#define yyconst /;"	d	file:
-yyconst	defs/nsstemplate_markup.yy.c	/^#define yyconst$/;"	d	file:
-yyensure_buffer_stack	defs/nsstemplate_markup.yy.c	/^static void yyensure_buffer_stack (void)$/;"	f	file:
-yyfree	defs/nsstemplate_markup.yy.c	/^void yyfree (void * ptr )$/;"	f
-yyget_debug	defs/nsstemplate_markup.yy.c	/^int yyget_debug  (void)$/;"	f
-yyget_in	defs/nsstemplate_markup.yy.c	/^FILE *yyget_in  (void)$/;"	f
-yyget_leng	defs/nsstemplate_markup.yy.c	/^yy_size_t yyget_leng  (void)$/;"	f
-yyget_lineno	defs/nsstemplate_markup.yy.c	/^int yyget_lineno  (void)$/;"	f
-yyget_out	defs/nsstemplate_markup.yy.c	/^FILE *yyget_out  (void)$/;"	f
-yyget_text	defs/nsstemplate_markup.yy.c	/^char *yyget_text  (void)$/;"	f
-yyin	defs/nsstemplate_markup.yy.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
-yyinput	defs/nsstemplate_markup.yy.c	/^    static int yyinput (void)$/;"	f	file:
-yyleng	defs/nsstemplate_markup.yy.c	/^yy_size_t yyleng;$/;"	v
-yyless	defs/nsstemplate_markup.yy.c	/^#define yyless(/;"	d	file:
-yyless	defs/nsstemplate_markup.yy.c	/^#undef yyless$/;"	d	file:
-yylex_destroy	defs/nsstemplate_markup.yy.c	/^int yylex_destroy  (void)$/;"	f
-yylineno	defs/nsstemplate_markup.yy.c	/^int yylineno = 1;$/;"	v
-yymore	defs/nsstemplate_markup.yy.c	/^#define yymore(/;"	d	file:
-yyout	defs/nsstemplate_markup.yy.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
-yypop_buffer_state	defs/nsstemplate_markup.yy.c	/^void yypop_buffer_state (void)$/;"	f
-yypush_buffer_state	defs/nsstemplate_markup.yy.c	/^void yypush_buffer_state (YY_BUFFER_STATE new_buffer )$/;"	f
-yyrealloc	defs/nsstemplate_markup.yy.c	/^void *yyrealloc  (void * ptr, yy_size_t  size )$/;"	f
-yyrestart	defs/nsstemplate_markup.yy.c	/^    void yyrestart  (FILE * input_file )$/;"	f
-yyset_debug	defs/nsstemplate_markup.yy.c	/^void yyset_debug (int  bdebug )$/;"	f
-yyset_in	defs/nsstemplate_markup.yy.c	/^void yyset_in (FILE *  in_str )$/;"	f
-yyset_lineno	defs/nsstemplate_markup.yy.c	/^void yyset_lineno (int  line_number )$/;"	f
-yyset_out	defs/nsstemplate_markup.yy.c	/^void yyset_out (FILE *  out_str )$/;"	f
-yyterminate	defs/nsstemplate_markup.yy.c	/^#define yyterminate(/;"	d	file:
-yytext	defs/nsstemplate_markup.yy.c	/^char *yytext;$/;"	v
-yytext_ptr	defs/nsstemplate_markup.yy.c	/^#define yytext_ptr /;"	d	file:
-yyunput	defs/nsstemplate_markup.yy.c	/^    static void yyunput (int c, register char * yy_bp )$/;"	f	file:

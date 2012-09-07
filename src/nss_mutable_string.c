@@ -21,6 +21,10 @@
 #include <stdlib.h>
 #include <nss_mutable_string.h>
 
+inline size_t _calculate_new_size(size_t str_length) {
+	return ((str_length + 1) * sizeof(char));
+}
+
 mutable_string_t* mutable_string_init(mutable_string_t *target) {
 	target->data = NULL;
 	target->is_empty = 'Y';
@@ -29,7 +33,13 @@ mutable_string_t* mutable_string_init(mutable_string_t *target) {
 	return 	mutable_string_resize(target, (INITIAL_MUTABLE_STRING_ALLOCATION*sizeof(char)));
 }
 
-mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_size) {
+mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_size)
+{
+	// this check is for security and memory management
+	if (new_size > MAXIMUM_MUTABLE_STRING_SIZE) {
+		return NULL;
+	}
+
 	char *check_ptr = (char*)realloc(target->data, new_size);
 
 	// If we're out of memory, don't trash the existing value, let the caller handle it!
@@ -62,42 +72,61 @@ void mutable_string_free(mutable_string_t *target) {
 
 mutable_string_t* mutable_string_assign(mutable_string_t *dest, char *src) {
 	size_t src_length = strlen(src);
+	size_t new_size = _calculate_new_size(src_length);
 
 	// Grow the string if necessary
-	if (src_length > dest->_data_size) {
-		if (mutable_string_resize(dest,(src_length+1)*sizeof(char)) == NULL) {
+	if (new_size > dest->_data_size) {
+		if (mutable_string_resize(dest,new_size) == NULL) {
 			return NULL;
 		}
 
-		dest->_data_size = src_length+1;
 	} // We don't shrink the string!
 
 	strcpy(dest->data, src);
 	dest->length = src_length;
+	dest->is_empty = 'N';
+	dest->_data_size = new_size;
 
 	return dest;
 }
 
 mutable_string_t* mutable_string_append(mutable_string_t *dest, char *src) {
+	if (mutable_string_is_empty(dest)) {
+		return mutable_string_assign(dest, src);
+	}
+
+	size_t new_len = strlen(src) + dest->length;
+	size_t new_size = _calculate_new_size(new_len);
+
+	// Grow if necessary.
+	if (new_size > dest->_data_size) {
+		if (mutable_string_resize(dest, new_size) == NULL) {
+			return NULL;
+		}
+
+	}
+
+	strncat(dest->data, src, MAXIMUM_MUTABLE_STRING_SIZE);
+	dest->length = new_len;
+	dest->_data_size = new_size;
+	dest->is_empty = 'N';
+
 	return NULL;
 }
 
 int mutable_string_get_length(mutable_string_t *var) {
-return 0;
+	return var->length;
 }
 
 short mutable_string_is_empty(mutable_string_t *var) {
-return 0;
+	return (var->is_empty == 'Y');
 }
 
 char* mutable_string_get_data(mutable_string_t *var) {
-return NULL;
+	return var->data;
 }
 
-mutable_string_t* mutable_string_clone(mutable_string_t *var) {
-return NULL;
-}
-
-mutable_string_t* mutable_string_copy(mutable_string_t *dest, mutable_string_t *src) {
-return NULL;
+mutable_string_t* mutable_string_copy(mutable_string_t *dest, mutable_string_t *src)
+{
+	return mutable_string_assign(dest, mutable_string_get_data(src));
 }

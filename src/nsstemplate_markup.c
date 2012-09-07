@@ -21,3 +21,41 @@
 #include <strmap.h>
 
 static StrMap *_tpl_symbols;
+
+char* markup_find_token(const char *buffer, const char *token) {
+	if (buffer == NULL || strnlen(buffer, NST_MAX_BUFFER) == 0) {
+		return NULL;
+	}
+
+	return strnstr(buffer, token, NST_MAX_BUFFER);
+}
+
+const char* markup_which_token_is_this(const char *buffer) {
+	
+	if (strncmp(chunk, NST_MARKUPSTART_LEFT,
+		strlen(NST_MARKUPSTART_LEFT)) == 0)
+	{
+		return NST_MARKUPSTART_LEFT;
+
+	} else if (strncmp(chunk, NST_MARKUPSTART_RIGHT,
+		strlen(NST_MARKUPSTART_RIGHT)) == 0)
+	{
+		return NST_MARKUPSTART_RIGHT;
+
+	} else if (strncmp(chunk, NST_MARKUPSTOP_LEFT,
+		strlen(NST_MARKUPSTOP_LEFT)) == 0)
+	{
+		return NST_MARKUPSTOP_LEFT;
+
+	} else if (strncmp(chunk, NST_MARKUPSTOP_RIGHT,
+		strlen(NST_MARKUPSTOP_RIGHT)) == 0)
+	{
+		return NST_MARKUPSTOP_RIGHT;
+	}
+
+	return NULL;
+}
+
+// void handle_keyword_if_start(template_context_t *ctx, char *instruction) {
+// 	return;
+// }

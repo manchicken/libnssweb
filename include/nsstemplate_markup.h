@@ -20,10 +20,14 @@
 #ifndef __NSSTEMPLATE_MARKUP_H__
 #define __NSSTEMPLATE_MARKUP_H__
 
-#define NST_MACROSTART_LEFT		"<%"
-#define NST_MACROSTART_RIGHT	"%>"
-#define NST_MACROSTOP_LEFT		"<%/"
-#define NST_MACROSTOP_RIGHT		"%>"
+#include <nssweb_config.h>
+#include <nsstemplate.h>
+#include <nss_mutable_string.h>
+
+#define NST_MARKUPSTART_LEFT		"<%"
+#define NST_MARKUPSTART_RIGHT	"%>"
+#define NST_MARKUPSTOP_LEFT		"<%/"
+#define NST_MARKUPSTOP_RIGHT		"%>"
 
 #define NST_KEYWORD_IF_START		"if"
 #define NST_KEYWORD_IF_ELSE			"else"
@@ -35,9 +39,17 @@
 #define NST_OPERATOR_ASSIGN		":="
 #define NST_OPERATOR_EQ			"=="
 
-#define NST_MAX_BUFFER_SIZE		4096
+#define NST_MAX_BUFFER			CFG_MAX_BUFFER_LENGTH
 
-void handle_keyword_if_start(template_context_t *ctx, char *)
+char* markup_find_token(const char *buffer, const char *token);
+#define markup_get_start_left(X)	markup_find_token(X, NST_MARKUPSTART_LEFT)
+#define markup_get_start_right(X)	markup_find_token(X, NST_MARKUPSTART_RIGHT)
+#define markup_get_stop_left(X)		markup_find_token(X, NST_MARKUPSTOP_LEFT)
+#define markup_get_stop_right(X)	markup_find_token(X, NST_MARKUPSTOP_RIGHT)
+#define markup_has_left_token(X)	(markup_get_start_left(X) || markup_get_stop_left(X))
 
+const char* markup_which_token_is_this(const char *buffer);
+
+// void handle_keyword_if_start(template_context_t *ctx, char *instruction);
 
 #endif

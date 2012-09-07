@@ -22,6 +22,10 @@
 #include <sys/errno.h>
 #include <string.h>
 
+inline char *scoot_ahead_to_right_token(char *chunk) {
+	return NULL;
+}
+
 void template_set_error_to_errno(
 	template_context_t* ctx,
 	short is_fatal,
@@ -55,7 +59,31 @@ continue_t template_init(
 	return CONTINUE_YES;
 }
 
+continue_t template_execute(template_context_t *ctx, FILE *outstream) {
+	char chunk[TPL_BUFFER_LENGTH+1]; chunk[0] = '\0';
+	// char *left_token = NULL;
+	size_t read_in = 0;
+
+	while ((read_in = fread(
+		chunk,
+		sizeof(char), TPL_BUFFER_LENGTH, ctx->instream
+	)) && !feof(ctx->instream))	{
+
+		// If we're not at the end of the file, back up a little bit to make sure we don't have a token
+
+		if (markup_has_left_token(chunk)) {
+			ctx->in_markup = 'T';
+		}
+	}
+
+	// if (read_in == EOF)
+
+	return CONTINUE_NO;
+}
+
 continue_t template_finish(template_context_t *ctx) {
+	mutable_string_free(&(ctx->buffer));
+
 	// Close the stream if it's open.
 	if (ctx->instream != NULL) {
 		if (fclose(ctx->instream) == EOF) {
