@@ -29,6 +29,8 @@
 #define NST_MARKUPSTOP_LEFT		"<%/"
 #define NST_MARKUPSTOP_RIGHT		"%>"
 
+#define NST_MARKUP_SUBSTITUTION		"="
+
 #define NST_KEYWORD_IF_START		"if"
 #define NST_KEYWORD_IF_ELSE			"else"
 #define NST_KEYWORD_IF_STOP			"endif"
@@ -46,7 +48,7 @@ char* markup_find_token(const char *buffer, const char *token);
 #define markup_get_start_right(X)	markup_find_token(X, NST_MARKUPSTART_RIGHT)
 #define markup_get_stop_left(X)		markup_find_token(X, NST_MARKUPSTOP_LEFT)
 #define markup_get_stop_right(X)	markup_find_token(X, NST_MARKUPSTOP_RIGHT)
-#define markup_has_left_token(X)	(markup_get_start_left(X) || markup_get_stop_left(X))
+char * markup_has_left_token(const char *haystack);
 
 const char* markup_which_token_is_this(const char *buffer);
 

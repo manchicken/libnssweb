@@ -20,6 +20,7 @@ SRCDIR = ./src
 INCDIR = ./include
 OBJDIR = ./obj
 LIBDIR = ./lib
+TESTDIR = ./tests
 
 CC = gcc
 AR = ar -cr
@@ -30,16 +31,23 @@ CFLAGS = -fPIC -ggdb3 -I$(INCDIR) -Wall
 
 LIBNSSHTTP_SRCS = $(SRCDIR)/nsshttp.c $(SRCDIR)/nsshttpio.c
 LIBNSSTEMPLATE_SRCS = $(SRCDIR)/nsstemplate.c $(SRCDIR)/strmap.c $(SRCDIR)/nss_mutable_string.c
+TESTS_SRCS = $(TESTDIR)/template1.c
 
 LIBNSSHTTP_OBJS = $(OBJDIR)/nsshttp.o $(OBJDIR)/nsshttpio.o
-LIBNSSTEMPLATE_OBJS = $(OBJDIR)/nsstemplate.o $(OBJDIR)/strmap.o $(SRCDIR)/nss_mutable_string.o
+LIBNSSTEMPLATE_OBJS = $(OBJDIR)/nsstemplate.o $(OBJDIR)/nsstemplate_markup.o $(OBJDIR)/strmap.o $(SRCDIR)/nss_mutable_string.o
+TESTS_OBJS = $(OBJDIR)/template1.o
 
 LIBS = $(LIBDIR)/libnsshttp.a $(LIBDIR)/libnsstemplate.a
-#LIBS = $(LIBDIR)/libnsshttp.a
+TESTS = $(TESTDIR)/template1.test
+
+TESTS_CFLAGS = -L$(LIBDIR) -lc -lnsstemplate
 
 .PHONY: all
-all: $(LIBS)
+all: $(LIBS) $(TESTS)
 	ctags -R -f .tags
+
+$(TESTDIR)/template1.test: $(OBJDIR)/template1.o
+	$(CC) -o $@ $(TESTS_CFLAGS) $<
 
 $(LIBDIR)/libnsshttp.a: $(LIBNSSHTTP_OBJS)
 	$(AR) $@ $(LIBNSSHTTP_OBJS)
@@ -52,9 +60,12 @@ $(LIBDIR)/libnsstemplate.a: $(LIBNSSTEMPLATE_OBJS)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) $< -c -o $@
 
+$(OBJDIR)/%.o: $(TESTDIR)/%.c
+	$(CC) $(CFLAGS) $< -c -o $@
+
 .PHONY: clean
 clean:
-	$(RM) $(OBJDIR)/*.o $(LIBDIR)/*.a
+	$(RM) $(OBJDIR)/*.o $(LIBDIR)/*.a $(TESTS)
 
 .PHONY: tags
 tags:

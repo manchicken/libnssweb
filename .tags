@@ -22,6 +22,7 @@ CONTENT_TYPE_TEXT_HTML	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TEX
 CONTENT_TYPE_TEXT_PLAIN	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TEXT_PLAIN	/;"	d
 CONTINUE_NO	include/nssweb_types.h	/^#define CONTINUE_NO	/;"	d
 CONTINUE_YES	include/nssweb_types.h	/^#define CONTINUE_YES	/;"	d
+DEBUG	include/nssweb_config.h	/^#define DEBUG(/;"	d
 ENV_SCRIPT_FILENAME	include/nsshttp.h	/^#define ENV_SCRIPT_FILENAME	/;"	d
 ERR_FATAL_NO	include/nsstemplate.h	/^#define ERR_FATAL_NO	/;"	d
 ERR_FATAL_YES	include/nsstemplate.h	/^#define ERR_FATAL_YES	/;"	d
@@ -82,7 +83,7 @@ INIT_TEMPLATE_ERROR_T	include/nsstemplate.h	/^#define INIT_TEMPLATE_ERROR_T(/;"	
 LIBDIR	Makefile	/^LIBDIR = .\/lib$/;"	m
 LIBNSSHTTP_OBJS	Makefile	/^LIBNSSHTTP_OBJS = $(OBJDIR)\/nsshttp.o $(OBJDIR)\/nsshttpio.o$/;"	m
 LIBNSSHTTP_SRCS	Makefile	/^LIBNSSHTTP_SRCS = $(SRCDIR)\/nsshttp.c $(SRCDIR)\/nsshttpio.c$/;"	m
-LIBNSSTEMPLATE_OBJS	Makefile	/^LIBNSSTEMPLATE_OBJS = $(OBJDIR)\/nsstemplate.o $(OBJDIR)\/strmap.o $(SRCDIR)\/nss_mutable_string.o$/;"	m
+LIBNSSTEMPLATE_OBJS	Makefile	/^LIBNSSTEMPLATE_OBJS = $(OBJDIR)\/nsstemplate.o $(OBJDIR)\/nsstemplate_markup.o $(OBJDIR)\/strmap.o $(SRCDIR)\/nss_mutable_string.o$/;"	m
 LIBNSSTEMPLATE_SRCS	Makefile	/^LIBNSSTEMPLATE_SRCS = $(SRCDIR)\/nsstemplate.c $(SRCDIR)\/strmap.c $(SRCDIR)\/nss_mutable_string.c$/;"	m
 LIBS	Makefile	/^LIBS = $(LIBDIR)\/libnsshttp.a $(LIBDIR)\/libnsstemplate.a$/;"	m
 MAKE_HTTP_STATUS	include/nsshttp_status.h	/^#define MAKE_HTTP_STATUS(/;"	d
@@ -111,6 +112,11 @@ SRCDIR	Makefile	/^SRCDIR = .\/src$/;"	m
 StrMap	include/strmap.h	/^typedef struct StrMap StrMap;$/;"	t	typeref:struct:StrMap
 StrMap	src/strmap.c	/^struct StrMap {$/;"	s	file:
 TEMPLATE_CHECK_ERROR	include/nsstemplate.h	/^#define TEMPLATE_CHECK_ERROR(/;"	d
+TESTDIR	Makefile	/^TESTDIR = .\/tests$/;"	m
+TESTS	Makefile	/^TESTS = $(TESTDIR)\/template1.test$/;"	m
+TESTS_CFLAGS	Makefile	/^TESTS_CFLAGS = -L$(LIBDIR) -lc -lnsstemplate$/;"	m
+TESTS_OBJS	Makefile	/^TESTS_OBJS = $(OBJDIR)\/template1.o$/;"	m
+TESTS_SRCS	Makefile	/^TESTS_SRCS = $(TESTDIR)\/template1.c$/;"	m
 TPL_BUFFER_LENGTH	include/nsstemplate.h	/^#define TPL_BUFFER_LENGTH	/;"	d
 TPL_ERRSTR_LENGTH	include/nsstemplate.h	/^#define TPL_ERRSTR_LENGTH	/;"	d
 TPL_FILE_PATH_LENGTH	include/nsstemplate.h	/^#define TPL_FILE_PATH_LENGTH /;"	d
@@ -148,6 +154,7 @@ errstr	include/nsshttp.h	/^	char errstr[HTTP_ERRSTR_LENGTH];$/;"	m	struct:__anon
 errstr	include/nsstemplate.h	/^	char errstr[TPL_ERRSTR_LENGTH];$/;"	m	struct:__anon9
 get_pair	src/strmap.c	/^static Pair * get_pair(Bucket *bucket, const char *key)$/;"	f	file:
 hash	src/strmap.c	/^static unsigned long hash(const char *str)$/;"	f	file:
+heading	tests/template1.c	/^#define heading	/;"	d	file:
 http_context_t	include/nsshttp.h	/^} http_context_t;$/;"	t	typeref:struct:__anon7
 http_die	src/nsshttp.c	/^void http_die(http_context_t *ctx, char* errmsg) {$/;"	f
 http_error_t	include/nsshttp.h	/^} http_error_t;$/;"	t	typeref:struct:__anon6
@@ -173,12 +180,13 @@ key	src/strmap.c	/^	char *key;$/;"	m	struct:Pair	file:
 key_len	include/nsshttp.h	/^	int key_len;$/;"	m	struct:__anon2
 length	include/nss_mutable_string.h	/^	int length;$/;"	m	struct:__anon1
 line	include/nsshttp_status.h	/^	char line[HTTP_STATUS_LINE_LENGTH];$/;"	m	struct:__anon8
+main	tests/template1.c	/^int main(int argc, char *argv[]) {$/;"	f
 markup_find_token	src/nsstemplate_markup.c	/^char* markup_find_token(const char *buffer, const char *token) {$/;"	f
 markup_get_start_left	include/nsstemplate_markup.h	/^#define markup_get_start_left(/;"	d
 markup_get_start_right	include/nsstemplate_markup.h	/^#define markup_get_start_right(/;"	d
 markup_get_stop_left	include/nsstemplate_markup.h	/^#define markup_get_stop_left(/;"	d
 markup_get_stop_right	include/nsstemplate_markup.h	/^#define markup_get_stop_right(/;"	d
-markup_has_left_token	include/nsstemplate_markup.h	/^#define markup_has_left_token(/;"	d
+markup_has_left_token	src/nsstemplate_markup.c	/^char * markup_has_left_token(const char *haystack) {$/;"	f
 markup_which_token_is_this	src/nsstemplate_markup.c	/^const char* markup_which_token_is_this(const char *buffer) {$/;"	f
 mutable_string_append	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_append(mutable_string_t *dest, char *src) {$/;"	f
 mutable_string_assign	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_assign(mutable_string_t *dest, char *src) {$/;"	f
@@ -220,6 +228,8 @@ template_file	include/nsstemplate.h	/^	char template_file[TPL_FILE_PATH_LENGTH];
 template_finish	src/nsstemplate.c	/^continue_t template_finish(template_context_t *ctx) {$/;"	f
 template_init	src/nsstemplate.c	/^continue_t template_init($/;"	f
 template_set_error_to_errno	src/nsstemplate.c	/^void template_set_error_to_errno($/;"	f
+templatefile	tests/template1.c	/^#define templatefile	/;"	d	file:
+title	tests/template1.c	/^#define title	/;"	d	file:
 value	include/nsshttp.h	/^	char value[CFG_QS_VALUE_LENGTH];$/;"	m	struct:__anon2
 value	src/strmap.c	/^	char *value;$/;"	m	struct:Pair	file:
 value_len	include/nsshttp.h	/^	int value_len;$/;"	m	struct:__anon2

@@ -41,7 +41,7 @@ void template_set_error_to_errno(
 
 continue_t template_init(
 	template_context_t* ctx,
-	char* path,
+	const char* path,
 	const char* template_file)
 {
 	INIT_TEMPLATE_CONTEXT_T(*ctx);
@@ -61,20 +61,30 @@ continue_t template_init(
 
 continue_t template_execute(template_context_t *ctx, FILE *outstream) {
 	char chunk[TPL_BUFFER_LENGTH+1]; chunk[0] = '\0';
-	// char *left_token = NULL;
+	char *left_token = NULL;
 	size_t read_in = 0;
+	int chunk_size = 0;
 
-	while ((read_in = fread(
-		chunk,
-		sizeof(char), TPL_BUFFER_LENGTH, ctx->instream
-	)) && !feof(ctx->instream))	{
+	read_in = fread(chunk, sizeof(char), TPL_BUFFER_LENGTH, ctx->instream);
+
+	if (read_in == 0) {
+		return CONTINUE_NO;
+	}
+
+	do {
+		DEBUG("Read chunk: %.*s\n", TPL_BUFFER_LENGTH, chunk);
 
 		// If we're not at the end of the file, back up a little bit to make sure we don't have a token
-
-		if (markup_has_left_token(chunk)) {
+		left_token = markup_has_left_token(chunk);
+		if (left_token != NULL) {
+			DEBUG("I got a token (up to 12 chars): %.*s\n", 12, left_token);
 			ctx->in_markup = 'T';
+			chunk_size = left_token - chunk;
+			printf("Here's chunk #1: %.*s\n", chunk_size, chunk);
 		}
-	}
+
+		read_in = fread(chunk, sizeof(char), TPL_BUFFER_LENGTH, ctx->instream);
+	} while (read_in > 0 && !feof(ctx->instream));
 
 	// if (read_in == EOF)
 

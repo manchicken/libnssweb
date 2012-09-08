@@ -77,7 +77,7 @@ typedef struct {
 
 continue_t template_init(
 	template_context_t* ctx,
-	char* path,
+	const char* path,
 	const char* template_file
 );
 

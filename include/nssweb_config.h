@@ -46,4 +46,6 @@
 
 #define CFG_MAX_BUFFER_LENGTH	4096
 
+#define DEBUG(...) fprintf(stderr, __VA_ARGS__)
+
 #endif
