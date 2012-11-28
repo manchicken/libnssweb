@@ -22,6 +22,9 @@
 
 #include <nss_mutable_string.h>
 
+#define DEFAULT_QS_SIZE	8
+#define MAX_QS_SIZE			128
+
 typedef enum {
 	HTTP,
 	HTTPS,
@@ -76,8 +79,13 @@ uri_t* uri_init(uri_t *target);
 void uri_free(uri_t *target);
 
 // Housekeeping for Query Strings
+qs_entry_t* qs_entry_init(qs_entry_t *target);
+void qs_entry_free(qs_entry_t *target);
 query_string_t* qs_init(query_string_t *target);
 void qs_free(query_string_t *target);
+query_string_t* qs_resize(query_string_t *target, int count);
+int qs_length(query_string_t *target);
+#define qs_is_empty(X) (X->entries_len == 0)
 
 // Housekeeping for URLs
 url_t* url_init(url_t *target);

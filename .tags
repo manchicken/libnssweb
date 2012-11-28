@@ -23,6 +23,7 @@ CONTENT_TYPE_TEXT_PLAIN	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TE
 CONTINUE_NO	include/nssweb_types.h	/^#define CONTINUE_NO	/;"	d
 CONTINUE_YES	include/nssweb_types.h	/^#define CONTINUE_YES	/;"	d
 DEBUG	include/nssweb_config.h	/^#define DEBUG(/;"	d
+DEFAULT_QS_SIZE	include/nssurl.h	/^#define DEFAULT_QS_SIZE	/;"	d
 ENV_SCRIPT_FILENAME	include/nsshttp.h	/^#define ENV_SCRIPT_FILENAME	/;"	d
 ERR_FATAL_NO	include/nsstemplate.h	/^#define ERR_FATAL_NO	/;"	d
 ERR_FATAL_YES	include/nsstemplate.h	/^#define ERR_FATAL_YES	/;"	d
@@ -89,6 +90,7 @@ LIBNSSTEMPLATE_SRCS	Makefile	/^LIBNSSTEMPLATE_SRCS = \\$/;"	m
 LIBS	Makefile	/^LIBS = \\$/;"	m
 MAKE_HTTP_STATUS	include/nsshttp_status.h	/^#define MAKE_HTTP_STATUS(/;"	d
 MAXIMUM_MUTABLE_STRING_SIZE	include/nss_mutable_string.h	/^#define MAXIMUM_MUTABLE_STRING_SIZE	/;"	d
+MAX_QS_SIZE	include/nssurl.h	/^#define MAX_QS_SIZE	/;"	d
 MUTSTR	include/nss_mutable_string.h	/^#define MUTSTR(/;"	d
 NST_KEYWORD_IF_ELSE	include/nsstemplate_markup.h	/^#define NST_KEYWORD_IF_ELSE	/;"	d
 NST_KEYWORD_IF_START	include/nsstemplate_markup.h	/^#define NST_KEYWORD_IF_START	/;"	d
@@ -220,9 +222,14 @@ path_separator	include/nsstemplate.h	/^static char path_separator = '\/';$/;"	v
 path_separator	src/nsshttp.c	/^static char path_separator = '\/';$/;"	v	file:
 port	include/nssurl.h	/^	unsigned short port;$/;"	m	struct:__anon10
 proto_scheme	include/nssurl.h	/^	scheme_t proto_scheme;$/;"	m	struct:__anon14
+qs_entry_free	src/nssurl.c	/^void qs_entry_free(qs_entry_t *target) {$/;"	f
+qs_entry_init	src/nssurl.c	/^qs_entry_t* qs_entry_init(qs_entry_t *target) {$/;"	f
 qs_entry_t	include/nssurl.h	/^} qs_entry_t;$/;"	t	typeref:struct:__anon12
 qs_free	src/nssurl.c	/^void qs_free(query_string_t *target) {$/;"	f
 qs_init	src/nssurl.c	/^query_string_t* qs_init(query_string_t *target) {$/;"	f
+qs_is_empty	include/nssurl.h	/^#define qs_is_empty(/;"	d
+qs_length	src/nssurl.c	/^int qs_length(query_string_t *target) {$/;"	f
+qs_resize	src/nssurl.c	/^query_string_t* qs_resize(query_string_t *target, int count)$/;"	f
 query_string	include/nssurl.h	/^	query_string_t query_string;$/;"	m	struct:__anon14
 query_string_t	include/nssurl.h	/^} query_string_t;$/;"	t	typeref:struct:__anon13
 request_header	include/nsshttp.h	/^	http_request_header_t request_header;$/;"	m	struct:__anon5
