@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"CON",
+				"CONTINUE_NO"
+			],
+			[
+				"TE",
+				"TESTS"
+			],
+			[
+				"ch",
+				"chunk_size"
+			],
+			[
+				"templa",
+				"templatefile"
+			],
+			[
+				"markup",
+				"markup_get_stop_left"
+			],
+			[
+				"NST_MAR",
+				"NST_MARKUPSTOP_RIGHT"
+			],
+			[
+				"NST",
+				"NST_MARKUPSTART_RIGHT"
+			],
+			[
+				"mut",
+				"mutable_string_t"
+			],
+			[
+				"templ",
+				"template_context_t"
+			],
+			[
+				"mutable_",
+				"mutable_string_get_data"
+			],
+			[
+				"mutable_string_i",
+				"mutable_string_is_empty"
+			],
+			[
+				"sr",
+				"src_length"
+			],
+			[
+				"mutable",
+				"mutable_string_get_data"
+			],
+			[
+				"mutable_strin",
+				"mutable_string_t"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"_",
+				"__NSSTEMPLATE_MARKUP_H__"
+			],
+			[
 				"script_",
 				"script_filename"
 			],
@@ -68,10 +132,6 @@
 				"ERR_TPL_CONTENT_NO"
 			],
 			[
-				"templ",
-				"template_set_error_to_errno"
-			],
-			[
 				"template_error",
 				"template_error_t"
 			],
@@ -98,10 +158,6 @@
 			[
 				"HTTP_STA",
 				"HTTP_STATUS_LINE_LENGTH"
-			],
-			[
-				"CON",
-				"CONTINUE_YES"
 			],
 			[
 				"CONTN",
@@ -283,13 +339,109 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "include/nsstemplate.h",
+			"settings":
+			{
+				"buffer_size": 2373,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/nsstemplate.c",
+			"settings":
+			{
+				"buffer_size": 2857,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/nsstemplate_markup.h",
+			"settings":
+			{
+				"buffer_size": 1990,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/nsstemplate_markup.c",
+			"settings":
+			{
+				"buffer_size": 2101,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/nss_mutable_string.h",
+			"settings":
+			{
+				"buffer_size": 1735,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/nss_mutable_string.c",
+			"settings":
+			{
+				"buffer_size": 3390,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Makefile",
+			"settings":
+			{
+				"buffer_size": 1992,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/nsshttp.h",
+			"settings":
+			{
+				"buffer_size": 3749,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/nsshttp.c",
+			"settings":
+			{
+				"buffer_size": 3186,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tests/template1.c",
+			"settings":
+			{
+				"buffer_size": 445,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/nssweb_config.h",
+			"settings":
+			{
+				"buffer_size": 1647,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 67.0,
+		"height": 267.0,
 		"selected_items":
 		[
+			[
+				"pro",
+				"Project: Close"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
 			[
 				"close",
 				"Project: Close"
@@ -355,7 +507,7 @@
 				"Project: Add Folder"
 			]
 		],
-		"width": 392.0
+		"width": 404.0
 	},
 	"console":
 	{
@@ -372,6 +524,10 @@
 	},
 	"file_history":
 	[
+		"/Users/manchicken/Downloads/nikeplusphp.4.3.php",
+		"/Users/manchicken/Documents/Devel/libnssweb/samples/template1.chtml",
+		"/Users/manchicken/Documents/Devel/libnssweb/include/nssweb_config.h",
+		"/Users/manchicken/Documents/Devel/libnssweb/src/strmap.c",
 		"/Users/manchicken/Documents/Devel/libnssweb/include/nsshttp_status.h",
 		"/Users/manchicken/Documents/Devel/cakesmeeting/src/test.c",
 		"/Users/manchicken/Documents/Devel/libnssweb/include/nsshttp_content_type.h",
@@ -380,7 +536,6 @@
 		"/Users/manchicken/Documents/Devel/libnssweb/include/nsstemplate.h",
 		"/Users/manchicken/Documents/Devel/libnssweb/src/nsshttp.c",
 		"/Users/manchicken/Documents/Devel/libnssweb/src/nsstemplate.c",
-		"/Users/manchicken/Documents/Devel/libnssweb/src/strmap.c",
 		"/Users/manchicken/Documents/Devel/libnssweb/src/nsstemplate_execution.c",
 		"/Users/manchicken/Documents/Devel/libnssweb/include/nsstemplate_execution.h",
 		"/Users/manchicken/Documents/Devel/libnssweb/include/nsshttp.h",
@@ -390,7 +545,6 @@
 		"/Users/manchicken/Documents/Devel/cakesmeeting/Makefile",
 		"/Users/manchicken/Library/Application Support/Sublime Text 2/Packages/CTags/README.creole",
 		"/Users/manchicken/Documents/Devel/libnssweb/include/nssweb_types.h",
-		"/Users/manchicken/Documents/Devel/libnssweb/include/nssweb_config.h",
 		"/Users/manchicken/Documents/Devel/libnssweb/include/nssweb.h",
 		"/Users/manchicken/Documents/Devel/libnssweb/LICENSE",
 		"/Users/manchicken/Documents/Devel/libnssweb/include/nsshttp_errors.h",
@@ -497,9 +651,7 @@
 		"/Volumes/cpm-apts.com (Dev)/app/views/pages/mobile/pets.ctp",
 		"/Volumes/cpm-apts.com (Dev)/app/views/pages/pets.ctp",
 		"/Volumes/cpm-apts.com (Dev)/app/views/pages/mobile/contactus.ctp",
-		"/Volumes/cpm-apts.com (Dev)/app/views/pages/ptenant.ctp",
-		"/Volumes/cpm-apts.com (Dev)/parking.php",
-		"/Volumes/cpm-apts.com (Dev)/include/config.php"
+		"/Volumes/cpm-apts.com (Dev)/app/views/pages/ptenant.ctp"
 	],
 	"find":
 	{
@@ -507,7 +659,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 		]
@@ -517,6 +669,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"inline",
+			";\n",
+			"script_filename",
 			"errno",
 			"stat",
 			"objs",
@@ -603,8 +758,301 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "include/nsstemplate.h",
+					"settings":
+					{
+						"buffer_size": 2373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								950,
+								950
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 318.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/nsstemplate.c",
+					"settings":
+					{
+						"buffer_size": 2857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2483,
+								2483
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"wrap_width": 0
+						},
+						"translation.x": 0.0,
+						"translation.y": 1097.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "include/nsstemplate_markup.h",
+					"settings":
+					{
+						"buffer_size": 1990,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1068,
+								1068
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"wrap_width": 0
+						},
+						"translation.x": 0.0,
+						"translation.y": 277.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/nsstemplate_markup.c",
+					"settings":
+					{
+						"buffer_size": 2101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1230,
+								1230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 262.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "include/nss_mutable_string.h",
+					"settings":
+					{
+						"buffer_size": 1735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1220,
+								1220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 118.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/nss_mutable_string.c",
+					"settings":
+					{
+						"buffer_size": 3390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3390,
+								3390
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 465.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Makefile",
+					"settings":
+					{
+						"buffer_size": 1992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1222,
+								1222
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 283.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "include/nsshttp.h",
+					"settings":
+					{
+						"buffer_size": 3749,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3334,
+								3334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1946.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/nsshttp.c",
+					"settings":
+					{
+						"buffer_size": 3186,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1552,
+								1552
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 604.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "tests/template1.c",
+					"settings":
+					{
+						"buffer_size": 445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								292,
+								292
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "include/nssweb_config.h",
+					"settings":
+					{
+						"buffer_size": 1647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1592,
+								1592
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 436.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

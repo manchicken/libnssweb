@@ -29,26 +29,64 @@ RM = rm -f
 
 CFLAGS = -fPIC -ggdb3 -I$(INCDIR) -Wall
 
-LIBNSSHTTP_SRCS = $(SRCDIR)/nsshttp.c $(SRCDIR)/nsshttpio.c
-LIBNSSTEMPLATE_SRCS = $(SRCDIR)/nsstemplate.c $(SRCDIR)/strmap.c $(SRCDIR)/nss_mutable_string.c
-TESTS_SRCS = $(TESTDIR)/template1.c
+# Sources
+LIBNSSHTTP_SRCS = \
+	$(SRCDIR)/nss_mutable_string.c \
+	$(SRCDIR)/nsshttp.c \
+	$(SRCDIR)/nsshttpio.c \
+	$(SRCDIR)/nssurl.c \
 
-LIBNSSHTTP_OBJS = $(OBJDIR)/nsshttp.o $(OBJDIR)/nsshttpio.o
-LIBNSSTEMPLATE_OBJS = $(OBJDIR)/nsstemplate.o $(OBJDIR)/nsstemplate_markup.o $(OBJDIR)/strmap.o $(SRCDIR)/nss_mutable_string.o
-TESTS_OBJS = $(OBJDIR)/template1.o
+LIBNSSTEMPLATE_SRCS = \
+	$(SRCDIR)/nsstemplate.c \
+	$(SRCDIR)/strmap.c \
+	$(SRCDIR)/nss_mutable_string.c \
 
-LIBS = $(LIBDIR)/libnsshttp.a $(LIBDIR)/libnsstemplate.a
-TESTS = $(TESTDIR)/template1.test
+TESTS_SRCS = \
+	$(TESTDIR)/template1.c \
+	$(TESTDIR)/url1.c \
 
-TESTS_CFLAGS = -L$(LIBDIR) -lc -lnsstemplate
+# Objects
+LIBNSSHTTP_OBJS = \
+	$(OBJDIR)/strmap.o \
+	$(OBJDIR)/nsshttp.o \
+	$(OBJDIR)/nsshttpio.o \
+	$(OBJDIR)/nssurl.o \
+
+LIBNSSTEMPLATE_OBJS = \
+	$(OBJDIR)/nsstemplate.o \
+	$(OBJDIR)/nsstemplate_markup.o \
+	$(OBJDIR)/strmap.o \
+	$(SRCDIR)/nss_mutable_string.o \
+
+TESTS_OBJS = \
+	$(OBJDIR)/template1.o \
+	$(OBJDIR)/url1.o \
+
+# Libraries
+LIBS = \
+	$(LIBDIR)/libnsshttp.a \
+	$(LIBDIR)/libnsstemplate.a \
+
+# Binaries
+TESTS = \
+	$(TESTDIR)/template1.test \
+	$(TESTDIR)/url1.test \
+
+# Flags
+TESTS_CFLAGS = -L$(LIBDIR) -lc -lnsstemplate -lnsshttp
 
 .PHONY: all
 all: $(LIBS) $(TESTS)
 	ctags -R -f .tags
 
+# Tests
 $(TESTDIR)/template1.test: $(OBJDIR)/template1.o
 	$(CC) -o $@ $(TESTS_CFLAGS) $<
 
+$(TESTDIR)/url1.test: $(OBJDIR)/url1.o
+	$(CC) -o $@ $(TESTS_CFLAGS) $<
+
+# Libs
 $(LIBDIR)/libnsshttp.a: $(LIBNSSHTTP_OBJS)
 	$(AR) $@ $(LIBNSSHTTP_OBJS)
 	$(RANLIB) $@
@@ -57,6 +95,7 @@ $(LIBDIR)/libnsstemplate.a: $(LIBNSSTEMPLATE_OBJS)
 	$(AR) $@ $(LIBNSSTEMPLATE_OBJS)
 	$(RANLIB) $@
 
+# Other stuff (generic)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) $< -c -o $@
 

@@ -28,9 +28,12 @@ ERR_FATAL_NO	include/nsstemplate.h	/^#define ERR_FATAL_NO	/;"	d
 ERR_FATAL_YES	include/nsstemplate.h	/^#define ERR_FATAL_YES	/;"	d
 ERR_TPL_CONTENT_NO	include/nsstemplate.h	/^#define ERR_TPL_CONTENT_NO	/;"	d
 ERR_TPL_CONTENT_YES	include/nsstemplate.h	/^#define ERR_TPL_CONTENT_YES	/;"	d
+FTP	include/nssurl.h	/^	FTP,$/;"	e	enum:__anon9
+HTTP	include/nssurl.h	/^	HTTP,$/;"	e	enum:__anon9
 HTTPIO_HEADER_FINISH	include/nsshttpio.h	/^#define HTTPIO_HEADER_FINISH /;"	d
 HTTPIO_HEADER_LINE_ENDING	include/nsshttpio.h	/^#define HTTPIO_HEADER_LINE_ENDING /;"	d
 HTTPIO_LINE_ENDING	include/nsshttpio.h	/^#define HTTPIO_LINE_ENDING /;"	d
+HTTPS	include/nssurl.h	/^	HTTPS,$/;"	e	enum:__anon9
 HTTPSTATLINE_INTERNAL_SERVER_ERROR	include/nsshttp_status.h	/^#define HTTPSTATLINE_INTERNAL_SERVER_ERROR	/;"	d
 HTTPSTATLINE_NO_STATUS	include/nsshttp_status.h	/^#define HTTPSTATLINE_NO_STATUS	/;"	d
 HTTPSTATLINE_OK	include/nsshttp_status.h	/^#define HTTPSTATLINE_OK	/;"	d
@@ -76,16 +79,14 @@ INIT_HTTP_RESPONSE_HEADER_T	include/nsshttp.h	/^#define INIT_HTTP_RESPONSE_HEADE
 INIT_HTTP_STATUS_CODE_T	include/nsshttp_status.h	/^#define INIT_HTTP_STATUS_CODE_T(/;"	d
 INIT_HTTP_STATUS_LINE_T	include/nsshttp_status.h	/^#define INIT_HTTP_STATUS_LINE_T(/;"	d
 INIT_HTTP_STATUS_T	include/nsshttp_status.h	/^#define INIT_HTTP_STATUS_T(/;"	d
-INIT_QS_ENTRY_T	include/nsshttp.h	/^#define INIT_QS_ENTRY_T(/;"	d
-INIT_QUERY_STRING_T	include/nsshttp.h	/^#define INIT_QUERY_STRING_T(/;"	d
 INIT_TEMPLATE_CONTEXT_T	include/nsstemplate.h	/^#define INIT_TEMPLATE_CONTEXT_T(/;"	d
 INIT_TEMPLATE_ERROR_T	include/nsstemplate.h	/^#define INIT_TEMPLATE_ERROR_T(/;"	d
 LIBDIR	Makefile	/^LIBDIR = .\/lib$/;"	m
-LIBNSSHTTP_OBJS	Makefile	/^LIBNSSHTTP_OBJS = $(OBJDIR)\/nsshttp.o $(OBJDIR)\/nsshttpio.o$/;"	m
-LIBNSSHTTP_SRCS	Makefile	/^LIBNSSHTTP_SRCS = $(SRCDIR)\/nsshttp.c $(SRCDIR)\/nsshttpio.c$/;"	m
-LIBNSSTEMPLATE_OBJS	Makefile	/^LIBNSSTEMPLATE_OBJS = $(OBJDIR)\/nsstemplate.o $(OBJDIR)\/nsstemplate_markup.o $(OBJDIR)\/strmap.o $(SRCDIR)\/nss_mutable_string.o$/;"	m
-LIBNSSTEMPLATE_SRCS	Makefile	/^LIBNSSTEMPLATE_SRCS = $(SRCDIR)\/nsstemplate.c $(SRCDIR)\/strmap.c $(SRCDIR)\/nss_mutable_string.c$/;"	m
-LIBS	Makefile	/^LIBS = $(LIBDIR)\/libnsshttp.a $(LIBDIR)\/libnsstemplate.a$/;"	m
+LIBNSSHTTP_OBJS	Makefile	/^LIBNSSHTTP_OBJS = \\$/;"	m
+LIBNSSHTTP_SRCS	Makefile	/^LIBNSSHTTP_SRCS = \\$/;"	m
+LIBNSSTEMPLATE_OBJS	Makefile	/^LIBNSSTEMPLATE_OBJS = \\$/;"	m
+LIBNSSTEMPLATE_SRCS	Makefile	/^LIBNSSTEMPLATE_SRCS = \\$/;"	m
+LIBS	Makefile	/^LIBS = \\$/;"	m
 MAKE_HTTP_STATUS	include/nsshttp_status.h	/^#define MAKE_HTTP_STATUS(/;"	d
 MAXIMUM_MUTABLE_STRING_SIZE	include/nss_mutable_string.h	/^#define MAXIMUM_MUTABLE_STRING_SIZE	/;"	d
 MUTSTR	include/nss_mutable_string.h	/^#define MUTSTR(/;"	d
@@ -99,6 +100,7 @@ NST_MARKUPSTART_LEFT	include/nsstemplate_markup.h	/^#define NST_MARKUPSTART_LEFT
 NST_MARKUPSTART_RIGHT	include/nsstemplate_markup.h	/^#define NST_MARKUPSTART_RIGHT	/;"	d
 NST_MARKUPSTOP_LEFT	include/nsstemplate_markup.h	/^#define NST_MARKUPSTOP_LEFT	/;"	d
 NST_MARKUPSTOP_RIGHT	include/nsstemplate_markup.h	/^#define NST_MARKUPSTOP_RIGHT	/;"	d
+NST_MARKUP_SUBSTITUTION	include/nsstemplate_markup.h	/^#define NST_MARKUP_SUBSTITUTION	/;"	d
 NST_MAX_BUFFER	include/nsstemplate_markup.h	/^#define NST_MAX_BUFFER	/;"	d
 NST_OPERATOR_ASSIGN	include/nsstemplate_markup.h	/^#define NST_OPERATOR_ASSIGN	/;"	d
 NST_OPERATOR_EQ	include/nsstemplate_markup.h	/^#define NST_OPERATOR_EQ	/;"	d
@@ -108,26 +110,30 @@ Pair	src/strmap.c	/^struct Pair {$/;"	s	file:
 Pair	src/strmap.c	/^typedef struct Pair Pair;$/;"	t	typeref:struct:Pair	file:
 RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
 RM	Makefile	/^RM = rm -f$/;"	m
+SFTP	include/nssurl.h	/^	SFTP$/;"	e	enum:__anon9
 SRCDIR	Makefile	/^SRCDIR = .\/src$/;"	m
 StrMap	include/strmap.h	/^typedef struct StrMap StrMap;$/;"	t	typeref:struct:StrMap
 StrMap	src/strmap.c	/^struct StrMap {$/;"	s	file:
 TEMPLATE_CHECK_ERROR	include/nsstemplate.h	/^#define TEMPLATE_CHECK_ERROR(/;"	d
 TESTDIR	Makefile	/^TESTDIR = .\/tests$/;"	m
-TESTS	Makefile	/^TESTS = $(TESTDIR)\/template1.test$/;"	m
-TESTS_CFLAGS	Makefile	/^TESTS_CFLAGS = -L$(LIBDIR) -lc -lnsstemplate$/;"	m
-TESTS_OBJS	Makefile	/^TESTS_OBJS = $(OBJDIR)\/template1.o$/;"	m
-TESTS_SRCS	Makefile	/^TESTS_SRCS = $(TESTDIR)\/template1.c$/;"	m
+TESTS	Makefile	/^TESTS = \\$/;"	m
+TESTS_CFLAGS	Makefile	/^TESTS_CFLAGS = -L$(LIBDIR) -lc -lnsstemplate -lnsshttp$/;"	m
+TESTS_OBJS	Makefile	/^TESTS_OBJS = \\$/;"	m
+TESTS_SRCS	Makefile	/^TESTS_SRCS = \\$/;"	m
 TPL_BUFFER_LENGTH	include/nsstemplate.h	/^#define TPL_BUFFER_LENGTH	/;"	d
 TPL_ERRSTR_LENGTH	include/nsstemplate.h	/^#define TPL_ERRSTR_LENGTH	/;"	d
 TPL_FILE_PATH_LENGTH	include/nsstemplate.h	/^#define TPL_FILE_PATH_LENGTH /;"	d
+URL_A	tests/url1.c	/^#define URL_A /;"	d	file:
 _STRMAP_H_	include/strmap.h	/^#define _STRMAP_H_$/;"	d
 __NSSHTTPIO_H__	include/nsshttpio.h	/^#define __NSSHTTPIO_H__$/;"	d
+__NSSHTTPREQUEST_H__	include/nsshttprequest.h	/^#define __NSSHTTPREQUEST_H__$/;"	d
 __NSSHTTP_CONTENT_TYPE_H__	include/nsshttp_content_type.h	/^#define __NSSHTTP_CONTENT_TYPE_H__$/;"	d
 __NSSHTTP_C__	src/nsshttp.c	/^#define __NSSHTTP_C__$/;"	d	file:
 __NSSHTTP_H__	include/nsshttp.h	/^#define __NSSHTTP_H__$/;"	d
 __NSSHTTP_STATUS_H__	include/nsshttp_status.h	/^#define __NSSHTTP_STATUS_H__$/;"	d
 __NSSTEMPLATE_H__	include/nsstemplate.h	/^#define __NSSTEMPLATE_H__$/;"	d
 __NSSTEMPLATE_MARKUP_H__	include/nsstemplate_markup.h	/^#define __NSSTEMPLATE_MARKUP_H__$/;"	d
+__NSSURL_H__	include/nssurl.h	/^#define __NSSURL_H__$/;"	d
 __NSSWEB_CONFIG_H__	include/nssweb_config.h	/^#define __NSSWEB_CONFIG_H__$/;"	d
 __NSSWEB_H__	include/nssweb.h	/^#define __NSSWEB_H__$/;"	d
 __NSSWEB_TYPES_H__	include/nssweb_types.h	/^#define __NSSWEB_TYPES_H__$/;"	d
@@ -135,52 +141,61 @@ __NSS_MUTABLE_STRING_H__	include/nss_mutable_string.h	/^#define __NSS_MUTABLE_ST
 _calculate_new_size	src/nss_mutable_string.c	/^inline size_t _calculate_new_size(size_t str_length) {$/;"	f
 _data_size	include/nss_mutable_string.h	/^	size_t _data_size;$/;"	m	struct:__anon1
 _tpl_symbols	src/nsstemplate_markup.c	/^static StrMap *_tpl_symbols;$/;"	v	file:
-base_path	include/nsstemplate.h	/^	char base_path[TPL_FILE_PATH_LENGTH];$/;"	m	struct:__anon10
+anchor	include/nssurl.h	/^	mutable_string_t anchor;$/;"	m	struct:__anon11
+base_path	include/nsstemplate.h	/^	char base_path[TPL_FILE_PATH_LENGTH];$/;"	m	struct:__anon8
 buckets	src/strmap.c	/^	Bucket *buckets;$/;"	m	struct:StrMap	file:
-buffer	include/nsstemplate.h	/^	mutable_string_t buffer;$/;"	m	struct:__anon10
-content_type	include/nsshttp.h	/^	char content_type[CFG_CONTENT_LENGTH_LIMIT];$/;"	m	struct:__anon5
+buffer	include/nsstemplate.h	/^	mutable_string_t buffer;$/;"	m	struct:__anon8
+content_type	include/nsshttp.h	/^	char content_type[CFG_CONTENT_LENGTH_LIMIT];$/;"	m	struct:__anon3
 continue_t	include/nssweb_types.h	/^typedef short continue_t;$/;"	t
 count	src/strmap.c	/^	unsigned int count;$/;"	m	struct:Bucket	file:
 count	src/strmap.c	/^	unsigned int count;$/;"	m	struct:StrMap	file:
 data	include/nss_mutable_string.h	/^	char *data;$/;"	m	struct:__anon1
-entries	include/nsshttp.h	/^	qs_entry_t entries[CFG_QS_ENTRY_LIMIT];$/;"	m	struct:__anon3
-entries_len	include/nsshttp.h	/^	int entries_len;$/;"	m	struct:__anon3
-err	include/nsshttp.h	/^	http_error_t err;$/;"	m	struct:__anon7
-err	include/nsstemplate.h	/^	template_error_t err;$/;"	m	struct:__anon10
-errnum	include/nsshttp.h	/^	int errnum;$/;"	m	struct:__anon6
-errnum	include/nsstemplate.h	/^	int errnum;$/;"	m	struct:__anon9
-error_source	include/nsshttp.h	/^	int error_source;$/;"	m	struct:__anon6
-errstr	include/nsshttp.h	/^	char errstr[HTTP_ERRSTR_LENGTH];$/;"	m	struct:__anon6
-errstr	include/nsstemplate.h	/^	char errstr[TPL_ERRSTR_LENGTH];$/;"	m	struct:__anon9
+die	tests/url1.c	/^void die(const char *msg) {$/;"	f
+endpoint	include/nssurl.h	/^	endpoint_t endpoint;$/;"	m	struct:__anon14
+endpoint	include/nssurl.h	/^	mutable_string_t endpoint;$/;"	m	struct:__anon10
+endpoint_free	src/nssurl.c	/^void endpoint_free(endpoint_t *target) {$/;"	f
+endpoint_init	src/nssurl.c	/^endpoint_t* endpoint_init(endpoint_t *target) {$/;"	f
+endpoint_t	include/nssurl.h	/^} endpoint_t;$/;"	t	typeref:struct:__anon10
+entries	include/nssurl.h	/^	qs_entry_t *entries;$/;"	m	struct:__anon13
+entries_len	include/nssurl.h	/^	int entries_len;$/;"	m	struct:__anon13
+err	include/nsshttp.h	/^	http_error_t err;$/;"	m	struct:__anon5
+err	include/nsstemplate.h	/^	template_error_t err;$/;"	m	struct:__anon8
+errnum	include/nsshttp.h	/^	int errnum;$/;"	m	struct:__anon4
+errnum	include/nsstemplate.h	/^	int errnum;$/;"	m	struct:__anon7
+error_source	include/nsshttp.h	/^	int error_source;$/;"	m	struct:__anon4
+errstr	include/nsshttp.h	/^	char errstr[HTTP_ERRSTR_LENGTH];$/;"	m	struct:__anon4
+errstr	include/nsstemplate.h	/^	char errstr[TPL_ERRSTR_LENGTH];$/;"	m	struct:__anon7
+file	include/nssurl.h	/^	mutable_string_t file;$/;"	m	struct:__anon11
 get_pair	src/strmap.c	/^static Pair * get_pair(Bucket *bucket, const char *key)$/;"	f	file:
 hash	src/strmap.c	/^static unsigned long hash(const char *str)$/;"	f	file:
 heading	tests/template1.c	/^#define heading	/;"	d	file:
-http_context_t	include/nsshttp.h	/^} http_context_t;$/;"	t	typeref:struct:__anon7
+host	include/nssurl.h	/^	mutable_string_t host;$/;"	m	struct:__anon10
+http_context_t	include/nsshttp.h	/^} http_context_t;$/;"	t	typeref:struct:__anon5
 http_die	src/nsshttp.c	/^void http_die(http_context_t *ctx, char* errmsg) {$/;"	f
-http_error_t	include/nsshttp.h	/^} http_error_t;$/;"	t	typeref:struct:__anon6
+http_error_t	include/nsshttp.h	/^} http_error_t;$/;"	t	typeref:struct:__anon4
 http_finish	src/nsshttp.c	/^continue_t http_finish(http_context_t *ctx) {$/;"	f
 http_init	src/nsshttp.c	/^continue_t http_init(http_context_t *ctx, FILE* stream) {$/;"	f
 http_output	src/nsshttp.c	/^continue_t http_output($/;"	f
-http_request_header_t	include/nsshttp.h	/^} http_request_header_t;$/;"	t	typeref:struct:__anon4
-http_response_header_t	include/nsshttp.h	/^} http_response_header_t;$/;"	t	typeref:struct:__anon5
+http_request_header_t	include/nsshttp.h	/^} http_request_header_t;$/;"	t	typeref:struct:__anon2
+http_response_header_t	include/nsshttp.h	/^} http_response_header_t;$/;"	t	typeref:struct:__anon3
 http_set_content_type	src/nsshttp.c	/^void http_set_content_type(http_context_t *ctx, const char* cnt_type) {$/;"	f
 http_set_status	src/nsshttp.c	/^void http_set_status(http_context_t *ctx, http_status_t to_assign) {$/;"	f
-http_status_t	include/nsshttp_status.h	/^} http_status_t;$/;"	t	typeref:struct:__anon8
+http_status_t	include/nsshttp_status.h	/^} http_status_t;$/;"	t	typeref:struct:__anon6
 httpio_finish_headers	src/nsshttpio.c	/^int httpio_finish_headers(FILE* stream) {$/;"	f
 httpio_finish_output	src/nsshttpio.c	/^void httpio_finish_output(FILE* stream) {$/;"	f
 httpio_print_header	src/nsshttpio.c	/^int httpio_print_header(FILE* stream, const char* field, const char* value) {$/;"	f
-in_markup	include/nsstemplate.h	/^	char in_markup;$/;"	m	struct:__anon10
-instream	include/nsstemplate.h	/^	FILE* instream;$/;"	m	struct:__anon10
+in_markup	include/nsstemplate.h	/^	char in_markup;$/;"	m	struct:__anon8
+instream	include/nsstemplate.h	/^	FILE* instream;$/;"	m	struct:__anon8
 is_empty	include/nss_mutable_string.h	/^	char is_empty;$/;"	m	struct:__anon1
-is_fatal	include/nsshttp.h	/^	int is_fatal;$/;"	m	struct:__anon6
-is_fatal	include/nsstemplate.h	/^	short is_fatal;$/;"	m	struct:__anon9
-is_template_content	include/nsstemplate.h	/^	short is_template_content;$/;"	m	struct:__anon9
-key	include/nsshttp.h	/^	char key[CFG_QS_KEY_LENGTH];$/;"	m	struct:__anon2
+is_fatal	include/nsshttp.h	/^	int is_fatal;$/;"	m	struct:__anon4
+is_fatal	include/nsstemplate.h	/^	short is_fatal;$/;"	m	struct:__anon7
+is_template_content	include/nsstemplate.h	/^	short is_template_content;$/;"	m	struct:__anon7
+key	include/nssurl.h	/^	mutable_string_t key;$/;"	m	struct:__anon12
 key	src/strmap.c	/^	char *key;$/;"	m	struct:Pair	file:
-key_len	include/nsshttp.h	/^	int key_len;$/;"	m	struct:__anon2
 length	include/nss_mutable_string.h	/^	int length;$/;"	m	struct:__anon1
-line	include/nsshttp_status.h	/^	char line[HTTP_STATUS_LINE_LENGTH];$/;"	m	struct:__anon8
+line	include/nsshttp_status.h	/^	char line[HTTP_STATUS_LINE_LENGTH];$/;"	m	struct:__anon6
 main	tests/template1.c	/^int main(int argc, char *argv[]) {$/;"	f
+main	tests/url1.c	/^int main(void) {$/;"	f
 markup_find_token	src/nsstemplate_markup.c	/^char* markup_find_token(const char *buffer, const char *token) {$/;"	f
 markup_get_start_left	include/nsstemplate_markup.h	/^#define markup_get_start_left(/;"	d
 markup_get_start_right	include/nsstemplate_markup.h	/^#define markup_get_start_right(/;"	d
@@ -195,21 +210,28 @@ mutable_string_free	src/nss_mutable_string.c	/^void mutable_string_free(mutable_
 mutable_string_get_data	src/nss_mutable_string.c	/^char* mutable_string_get_data(mutable_string_t *var) {$/;"	f
 mutable_string_get_length	src/nss_mutable_string.c	/^int mutable_string_get_length(mutable_string_t *var) {$/;"	f
 mutable_string_init	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_init(mutable_string_t *target) {$/;"	f
+mutable_string_init_with_value	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_init_with_value(mutable_string_t *target, const char *value) {$/;"	f
 mutable_string_is_empty	src/nss_mutable_string.c	/^short mutable_string_is_empty(mutable_string_t *var) {$/;"	f
 mutable_string_resize	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_size)$/;"	f
 mutable_string_t	include/nss_mutable_string.h	/^} mutable_string_t;$/;"	t	typeref:struct:__anon1
 pairs	src/strmap.c	/^	Pair *pairs;$/;"	m	struct:Bucket	file:
+path	include/nssurl.h	/^	mutable_string_t path;$/;"	m	struct:__anon11
 path_separator	include/nsstemplate.h	/^static char path_separator = '\/';$/;"	v
 path_separator	src/nsshttp.c	/^static char path_separator = '\/';$/;"	v	file:
-qs_entry_t	include/nsshttp.h	/^} qs_entry_t;$/;"	t	typeref:struct:__anon2
-query_string	include/nsshttp.h	/^	query_string_t query_string;$/;"	m	struct:__anon7
-query_string_t	include/nsshttp.h	/^} query_string_t;$/;"	t	typeref:struct:__anon3
-request_header	include/nsshttp.h	/^	http_request_header_t request_header;$/;"	m	struct:__anon7
-request_uri	include/nsshttp.h	/^	char request_uri[CFG_REQUEST_URI_LENGTH];$/;"	m	struct:__anon4
-response_header	include/nsshttp.h	/^	http_response_header_t response_header;$/;"	m	struct:__anon7
+port	include/nssurl.h	/^	unsigned short port;$/;"	m	struct:__anon10
+proto_scheme	include/nssurl.h	/^	scheme_t proto_scheme;$/;"	m	struct:__anon14
+qs_entry_t	include/nssurl.h	/^} qs_entry_t;$/;"	t	typeref:struct:__anon12
+qs_free	src/nssurl.c	/^void qs_free(query_string_t *target) {$/;"	f
+qs_init	src/nssurl.c	/^query_string_t* qs_init(query_string_t *target) {$/;"	f
+query_string	include/nssurl.h	/^	query_string_t query_string;$/;"	m	struct:__anon14
+query_string_t	include/nssurl.h	/^} query_string_t;$/;"	t	typeref:struct:__anon13
+request_header	include/nsshttp.h	/^	http_request_header_t request_header;$/;"	m	struct:__anon5
+request_uri	include/nsshttp.h	/^	char request_uri[CFG_REQUEST_URI_LENGTH];$/;"	m	struct:__anon2
+response_header	include/nsshttp.h	/^	http_response_header_t response_header;$/;"	m	struct:__anon5
+scheme_t	include/nssurl.h	/^} scheme_t;$/;"	t	typeref:enum:__anon9
 scoot_ahead_to_right_token	src/nsstemplate.c	/^inline char *scoot_ahead_to_right_token(char *chunk) {$/;"	f
-script_file	include/nsshttp.h	/^	char script_file[PATH_LENGTH];$/;"	m	struct:__anon7
-script_path	include/nsshttp.h	/^	char script_path[PATH_LENGTH];$/;"	m	struct:__anon7
+script_file	include/nsshttp.h	/^	char script_file[PATH_LENGTH];$/;"	m	struct:__anon5
+script_path	include/nsshttp.h	/^	char script_path[PATH_LENGTH];$/;"	m	struct:__anon5
 sm_delete	src/strmap.c	/^void sm_delete(StrMap *map)$/;"	f
 sm_enum	src/strmap.c	/^int sm_enum(const StrMap *map, sm_enum_func enum_func, const void *obj)$/;"	f
 sm_enum_func	include/strmap.h	/^typedef void(*sm_enum_func)(const char *key, const char *value, const void *obj);$/;"	t
@@ -218,18 +240,28 @@ sm_get	src/strmap.c	/^int sm_get(const StrMap *map, const char *key, char *out_b
 sm_get_count	src/strmap.c	/^int sm_get_count(const StrMap *map)$/;"	f
 sm_new	src/strmap.c	/^StrMap * sm_new(unsigned int capacity)$/;"	f
 sm_put	src/strmap.c	/^int sm_put(StrMap *map, const char *key, const char *value)$/;"	f
-status	include/nsshttp.h	/^	http_status_t status;$/;"	m	struct:__anon5
-status	include/nsshttp_status.h	/^	short status;$/;"	m	struct:__anon8
-stream	include/nsshttp.h	/^	FILE* stream;$/;"	m	struct:__anon7
-template_context_t	include/nsstemplate.h	/^} template_context_t;$/;"	t	typeref:struct:__anon10
-template_error_t	include/nsstemplate.h	/^} template_error_t;$/;"	t	typeref:struct:__anon9
+status	include/nsshttp.h	/^	http_status_t status;$/;"	m	struct:__anon3
+status	include/nsshttp_status.h	/^	short status;$/;"	m	struct:__anon6
+stream	include/nsshttp.h	/^	FILE* stream;$/;"	m	struct:__anon5
+template_context_t	include/nsstemplate.h	/^} template_context_t;$/;"	t	typeref:struct:__anon8
+template_error_t	include/nsstemplate.h	/^} template_error_t;$/;"	t	typeref:struct:__anon7
 template_execute	src/nsstemplate.c	/^continue_t template_execute(template_context_t *ctx, FILE *outstream) {$/;"	f
-template_file	include/nsstemplate.h	/^	char template_file[TPL_FILE_PATH_LENGTH];$/;"	m	struct:__anon10
+template_file	include/nsstemplate.h	/^	char template_file[TPL_FILE_PATH_LENGTH];$/;"	m	struct:__anon8
 template_finish	src/nsstemplate.c	/^continue_t template_finish(template_context_t *ctx) {$/;"	f
 template_init	src/nsstemplate.c	/^continue_t template_init($/;"	f
 template_set_error_to_errno	src/nsstemplate.c	/^void template_set_error_to_errno($/;"	f
 templatefile	tests/template1.c	/^#define templatefile	/;"	d	file:
 title	tests/template1.c	/^#define title	/;"	d	file:
-value	include/nsshttp.h	/^	char value[CFG_QS_VALUE_LENGTH];$/;"	m	struct:__anon2
+uri	include/nssurl.h	/^	mutable_string_t uri;$/;"	m	struct:__anon11
+uri	include/nssurl.h	/^	uri_t uri;$/;"	m	struct:__anon14
+uri_free	src/nssurl.c	/^void uri_free(uri_t *target) {$/;"	f
+uri_init	src/nssurl.c	/^uri_t* uri_init(uri_t *target) {$/;"	f
+uri_t	include/nssurl.h	/^} uri_t;$/;"	t	typeref:struct:__anon11
+url	include/nssurl.h	/^	mutable_string_t url;$/;"	m	struct:__anon14
+url_construct	src/nssurl.c	/^mutable_string_t* url_construct(url_t *input) {$/;"	f
+url_free	src/nssurl.c	/^void url_free(url_t *target) {$/;"	f
+url_init	src/nssurl.c	/^url_t* url_init(url_t *target) {$/;"	f
+url_parse	src/nssurl.c	/^url_t* url_parse(url_t *output, mutable_string_t *input) {$/;"	f
+url_t	include/nssurl.h	/^} url_t;$/;"	t	typeref:struct:__anon14
+value	include/nssurl.h	/^	mutable_string_t value;$/;"	m	struct:__anon12
 value	src/strmap.c	/^	char *value;$/;"	m	struct:Pair	file:
-value_len	include/nsshttp.h	/^	int value_len;$/;"	m	struct:__anon2

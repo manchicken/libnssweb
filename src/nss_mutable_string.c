@@ -30,7 +30,19 @@ mutable_string_t* mutable_string_init(mutable_string_t *target) {
 	target->is_empty = 'Y';
 	target->_data_size = 0;
 
-	return 	mutable_string_resize(target, (INITIAL_MUTABLE_STRING_ALLOCATION*sizeof(char)));
+	return mutable_string_resize(target, (INITIAL_MUTABLE_STRING_ALLOCATION*sizeof(char)));
+}
+
+mutable_string_t* mutable_string_init_with_value(mutable_string_t *target, const char *value) {
+	if (!mutable_string_init(target)) {
+		return NULL;
+	}
+
+	if (!mutable_string_assign(target, value)) {
+		return NULL;
+	}
+
+	return target;
 }
 
 mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_size)
@@ -62,6 +74,10 @@ mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_siz
 }
 
 void mutable_string_free(mutable_string_t *target) {
+	// Sometimes you get garbage...
+	if (!target)
+		return;
+
 	free(target->data);
 	target->is_empty = 'Y';
 	target->_data_size = 0;

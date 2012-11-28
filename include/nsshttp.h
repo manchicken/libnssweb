@@ -26,36 +26,7 @@
 #include <nssweb_types.h>
 #include <nsshttp_status.h>
 #include <nsshttp_content_type.h>
-
-// Definition of strings used in the protocol
-typedef struct {
-	char key[CFG_QS_KEY_LENGTH];
-	int key_len;
-
-	char value[CFG_QS_VALUE_LENGTH];
-	int value_len;
-} qs_entry_t;
-
-#define INIT_QS_ENTRY_T(X)				\
-	do {								\
-		(X).key[0] = '\0';				\
-		(X).key_len = 0;				\
-		(X).value[0] = '\0';			\
-		(X).value_len = 0;				\
-	} while(0)
-
-
-typedef struct {
-	qs_entry_t entries[CFG_QS_ENTRY_LIMIT];
-	int entries_len;
-} query_string_t;
-
-#define INIT_QUERY_STRING_T(X)			\
-	do {								\
-		INIT_QS_ENTRY_T(X.entries[0]);	\
-		X.entries_len = 0;				\
-	} while(0)
-
+#include <nssurl.h>
 
 typedef struct {
 	char request_uri[CFG_REQUEST_URI_LENGTH];
@@ -101,7 +72,6 @@ typedef struct {
 #define PATH_LENGTH 256
 typedef struct {
 	http_error_t err;
-	query_string_t query_string;
 	http_request_header_t request_header;
 	http_response_header_t response_header;
 	FILE* stream;
@@ -113,7 +83,6 @@ typedef struct {
 #define INIT_HTTP_CONTEXT_T(X)								\
 	do {													\
 		INIT_HTTP_ERROR_T((X).err);							\
-		INIT_QUERY_STRING_T((X).query_string);				\
 		INIT_HTTP_REQUEST_HEADER_T((X).request_header);		\
 		INIT_HTTP_RESPONSE_HEADER_T((X).response_header);	\
 		(X).stream = (FILE*)NULL;							\
