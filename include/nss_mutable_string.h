@@ -40,8 +40,8 @@ mutable_string_t* mutable_string_resize(mutable_string_t* target, size_t new_siz
 void mutable_string_free(mutable_string_t *target);
 void mutable_string_empty(mutable_string_t *target);
 
-mutable_string_t* mutable_string_assign(mutable_string_t *dest, char *src);
-mutable_string_t* mutable_string_append(mutable_string_t *dest, char *src);
+mutable_string_t* mutable_string_assign(mutable_string_t *dest, const char *src);
+mutable_string_t* mutable_string_append(mutable_string_t *dest, const char *src);
 
 int mutable_string_get_length(mutable_string_t *var);
 short mutable_string_is_empty(mutable_string_t *var);

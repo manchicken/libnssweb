@@ -26,6 +26,7 @@
 #define MAX_QS_SIZE			128
 
 typedef enum {
+	INVALID,
 	HTTP,
 	HTTPS,
 	FTP,
@@ -69,6 +70,25 @@ typedef struct {
 
 	query_string_t query_string;
 } url_t;
+
+struct url_error_s {
+	mutable_string_t message;
+	char is_error;
+};
+
+extern struct url_error_s url_error;
+
+#define SET_URL_ERROR(str) \
+	do { \
+		mutable_string_init_with_value(&(url_error.message), str); \
+		url_error.is_error = 'Y'; \
+	} while (0);
+
+#define CLEAR_URL_ERROR() \
+	do { \
+		mutable_string_free(&(url_error.message)); \
+		url_error.is_error = 'N'; \
+	} while (0);
 
 // Housekeeping for endpoints
 endpoint_t* endpoint_init(endpoint_t *target);

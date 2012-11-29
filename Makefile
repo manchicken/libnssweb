@@ -83,8 +83,8 @@ all: $(LIBS) $(TESTS)
 $(TESTDIR)/template1.test: $(OBJDIR)/template1.o
 	$(CC) -o $@ $(TESTS_CFLAGS) $<
 
-$(TESTDIR)/url1.test: $(OBJDIR)/url1.o
-	$(CC) -o $@ $(TESTS_CFLAGS) $<
+$(TESTDIR)/url1.test: $(OBJDIR)/url1.o $(LIBDIR)/libnsshttp.a
+	$(CC) -o $@ $(TESTS_CFLAGS) $(OBJDIR)/url1.o
 
 # Libs
 $(LIBDIR)/libnsshttp.a: $(LIBNSSHTTP_OBJS)

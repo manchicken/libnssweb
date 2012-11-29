@@ -18,6 +18,7 @@ CFG_QS_VALUE_LENGTH	include/nssweb_config.h	/^#define CFG_QS_VALUE_LENGTH /;"	d
 CFG_QUERY_STRING_LIMIT	include/nssweb_config.h	/^#define CFG_QUERY_STRING_LIMIT /;"	d
 CFG_REQUEST_URI_LENGTH	include/nssweb_config.h	/^#define CFG_REQUEST_URI_LENGTH /;"	d
 CFLAGS	Makefile	/^CFLAGS = -fPIC -ggdb3 -I$(INCDIR) -Wall$/;"	m
+CLEAR_URL_ERROR	include/nssurl.h	/^#define CLEAR_URL_ERROR(/;"	d
 CONTENT_TYPE_TEXT_HTML	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TEXT_HTML	/;"	d
 CONTENT_TYPE_TEXT_PLAIN	include/nsshttp_content_type.h	/^#define CONTENT_TYPE_TEXT_PLAIN	/;"	d
 CONTINUE_NO	include/nssweb_types.h	/^#define CONTINUE_NO	/;"	d
@@ -82,6 +83,7 @@ INIT_HTTP_STATUS_LINE_T	include/nsshttp_status.h	/^#define INIT_HTTP_STATUS_LINE
 INIT_HTTP_STATUS_T	include/nsshttp_status.h	/^#define INIT_HTTP_STATUS_T(/;"	d
 INIT_TEMPLATE_CONTEXT_T	include/nsstemplate.h	/^#define INIT_TEMPLATE_CONTEXT_T(/;"	d
 INIT_TEMPLATE_ERROR_T	include/nsstemplate.h	/^#define INIT_TEMPLATE_ERROR_T(/;"	d
+INVALID	include/nssurl.h	/^	INVALID,$/;"	e	enum:__anon9
 LIBDIR	Makefile	/^LIBDIR = .\/lib$/;"	m
 LIBNSSHTTP_OBJS	Makefile	/^LIBNSSHTTP_OBJS = \\$/;"	m
 LIBNSSHTTP_SRCS	Makefile	/^LIBNSSHTTP_SRCS = \\$/;"	m
@@ -108,10 +110,13 @@ NST_OPERATOR_ASSIGN	include/nsstemplate_markup.h	/^#define NST_OPERATOR_ASSIGN	/
 NST_OPERATOR_EQ	include/nsstemplate_markup.h	/^#define NST_OPERATOR_EQ	/;"	d
 OBJDIR	Makefile	/^OBJDIR = .\/obj$/;"	m
 PATH_LENGTH	include/nsshttp.h	/^#define PATH_LENGTH /;"	d
+PROTO_LEN	src/nssurl.c	/^#define PROTO_LEN	/;"	d	file:
+PROTO_TOKEN	src/nssurl.c	/^#define PROTO_TOKEN /;"	d	file:
 Pair	src/strmap.c	/^struct Pair {$/;"	s	file:
 Pair	src/strmap.c	/^typedef struct Pair Pair;$/;"	t	typeref:struct:Pair	file:
 RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
 RM	Makefile	/^RM = rm -f$/;"	m
+SET_URL_ERROR	include/nssurl.h	/^#define SET_URL_ERROR(/;"	d
 SFTP	include/nssurl.h	/^	SFTP$/;"	e	enum:__anon9
 SRCDIR	Makefile	/^SRCDIR = .\/src$/;"	m
 StrMap	include/strmap.h	/^typedef struct StrMap StrMap;$/;"	t	typeref:struct:StrMap
@@ -142,6 +147,7 @@ __NSSWEB_TYPES_H__	include/nssweb_types.h	/^#define __NSSWEB_TYPES_H__$/;"	d
 __NSS_MUTABLE_STRING_H__	include/nss_mutable_string.h	/^#define __NSS_MUTABLE_STRING_H__$/;"	d
 _calculate_new_size	src/nss_mutable_string.c	/^inline size_t _calculate_new_size(size_t str_length) {$/;"	f
 _data_size	include/nss_mutable_string.h	/^	size_t _data_size;$/;"	m	struct:__anon1
+_playbuff	src/nssurl.c	/^static char _playbuff[1024];$/;"	v	file:
 _tpl_symbols	src/nsstemplate_markup.c	/^static StrMap *_tpl_symbols;$/;"	v	file:
 anchor	include/nssurl.h	/^	mutable_string_t anchor;$/;"	m	struct:__anon11
 base_path	include/nsstemplate.h	/^	char base_path[TPL_FILE_PATH_LENGTH];$/;"	m	struct:__anon8
@@ -189,6 +195,7 @@ httpio_print_header	src/nsshttpio.c	/^int httpio_print_header(FILE* stream, cons
 in_markup	include/nsstemplate.h	/^	char in_markup;$/;"	m	struct:__anon8
 instream	include/nsstemplate.h	/^	FILE* instream;$/;"	m	struct:__anon8
 is_empty	include/nss_mutable_string.h	/^	char is_empty;$/;"	m	struct:__anon1
+is_error	include/nssurl.h	/^	char is_error;$/;"	m	struct:url_error_s
 is_fatal	include/nsshttp.h	/^	int is_fatal;$/;"	m	struct:__anon4
 is_fatal	include/nsstemplate.h	/^	short is_fatal;$/;"	m	struct:__anon7
 is_template_content	include/nsstemplate.h	/^	short is_template_content;$/;"	m	struct:__anon7
@@ -205,8 +212,9 @@ markup_get_stop_left	include/nsstemplate_markup.h	/^#define markup_get_stop_left
 markup_get_stop_right	include/nsstemplate_markup.h	/^#define markup_get_stop_right(/;"	d
 markup_has_left_token	src/nsstemplate_markup.c	/^char * markup_has_left_token(const char *haystack) {$/;"	f
 markup_which_token_is_this	src/nsstemplate_markup.c	/^const char* markup_which_token_is_this(const char *buffer) {$/;"	f
-mutable_string_append	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_append(mutable_string_t *dest, char *src) {$/;"	f
-mutable_string_assign	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_assign(mutable_string_t *dest, char *src) {$/;"	f
+message	include/nssurl.h	/^	mutable_string_t message;$/;"	m	struct:url_error_s
+mutable_string_append	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_append(mutable_string_t *dest, const char *src) {$/;"	f
+mutable_string_assign	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_assign(mutable_string_t *dest, const char *src) {$/;"	f
 mutable_string_copy	src/nss_mutable_string.c	/^mutable_string_t* mutable_string_copy(mutable_string_t *dest, mutable_string_t *src)$/;"	f
 mutable_string_free	src/nss_mutable_string.c	/^void mutable_string_free(mutable_string_t *target) {$/;"	f
 mutable_string_get_data	src/nss_mutable_string.c	/^char* mutable_string_get_data(mutable_string_t *var) {$/;"	f
@@ -235,6 +243,7 @@ query_string_t	include/nssurl.h	/^} query_string_t;$/;"	t	typeref:struct:__anon1
 request_header	include/nsshttp.h	/^	http_request_header_t request_header;$/;"	m	struct:__anon5
 request_uri	include/nsshttp.h	/^	char request_uri[CFG_REQUEST_URI_LENGTH];$/;"	m	struct:__anon2
 response_header	include/nsshttp.h	/^	http_response_header_t response_header;$/;"	m	struct:__anon5
+scheme_from_str	src/nssurl.c	/^inline scheme_t scheme_from_str(const char *str) {$/;"	f
 scheme_t	include/nssurl.h	/^} scheme_t;$/;"	t	typeref:enum:__anon9
 scoot_ahead_to_right_token	src/nsstemplate.c	/^inline char *scoot_ahead_to_right_token(char *chunk) {$/;"	f
 script_file	include/nsshttp.h	/^	char script_file[PATH_LENGTH];$/;"	m	struct:__anon5
@@ -266,6 +275,8 @@ uri_init	src/nssurl.c	/^uri_t* uri_init(uri_t *target) {$/;"	f
 uri_t	include/nssurl.h	/^} uri_t;$/;"	t	typeref:struct:__anon11
 url	include/nssurl.h	/^	mutable_string_t url;$/;"	m	struct:__anon14
 url_construct	src/nssurl.c	/^mutable_string_t* url_construct(url_t *input) {$/;"	f
+url_error	src/nssurl.c	/^struct url_error_s url_error;$/;"	v	typeref:struct:url_error_s
+url_error_s	include/nssurl.h	/^struct url_error_s {$/;"	s
 url_free	src/nssurl.c	/^void url_free(url_t *target) {$/;"	f
 url_init	src/nssurl.c	/^url_t* url_init(url_t *target) {$/;"	f
 url_parse	src/nssurl.c	/^url_t* url_parse(url_t *output, mutable_string_t *input) {$/;"	f

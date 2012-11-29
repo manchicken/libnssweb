@@ -86,7 +86,7 @@ void mutable_string_free(mutable_string_t *target) {
 	return;
 }
 
-mutable_string_t* mutable_string_assign(mutable_string_t *dest, char *src) {
+mutable_string_t* mutable_string_assign(mutable_string_t *dest, const char *src) {
 	size_t src_length = strlen(src);
 	size_t new_size = _calculate_new_size(src_length);
 
@@ -106,7 +106,7 @@ mutable_string_t* mutable_string_assign(mutable_string_t *dest, char *src) {
 	return dest;
 }
 
-mutable_string_t* mutable_string_append(mutable_string_t *dest, char *src) {
+mutable_string_t* mutable_string_append(mutable_string_t *dest, const char *src) {
 	if (mutable_string_is_empty(dest)) {
 		return mutable_string_assign(dest, src);
 	}

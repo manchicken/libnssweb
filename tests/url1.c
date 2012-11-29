@@ -18,6 +18,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <nssurl.h>
 #include <nss_mutable_string.h>
 
@@ -40,6 +41,10 @@ int main(void) {
 
 	if (!url_parse(&a, &a_str)) {
 		die("Failed to parse URL A");
+	}
+
+	if (url_error.is_error == 'Y') {
+		fprintf(stderr, "I have an error: %s\n", MUTSTR(&(url_error.message)));
 	}
 
 	url_free(&a);

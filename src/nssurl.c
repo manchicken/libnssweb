@@ -19,6 +19,9 @@
 
 #include <nssurl.h>
 #include <stdlib.h>
+#include <stdio.h>
+
+struct url_error_s url_error;
 
 // Housekeeping for endpoints
 endpoint_t* endpoint_init(endpoint_t *target) {
@@ -62,14 +65,6 @@ void uri_free(uri_t *target) {
 	mutable_string_free(&(target->path));
 	mutable_string_free(&(target->file));
 	mutable_string_free(&(target->anchor));
-	return;
-}
-
-// Housekeeping for URLs
-url_t* url_init(url_t *target) {
-	return NULL;
-}
-void url_free(url_t *target) {
 	return;
 }
 
@@ -151,9 +146,68 @@ int qs_length(query_string_t *target) {
 	return target->entries_len;
 }
 
+// Housekeeping for URLs
+url_t* url_init(url_t *target) {
+	if (!mutable_string_init(&(target->url))) {
+		return NULL;
+	}
+
+	if (!endpoint_init(&(target->endpoint))) {
+		return NULL;
+	}
+
+	if (!uri_init(&(target->uri))) {
+		return NULL;
+	}
+
+	if (!qs_init(&(target->query_string))) {
+		return NULL;
+	}
+
+	target->proto_scheme = HTTP;
+
+	return target;
+}
+
+void url_free(url_t *target) {
+	if (!target) {
+		return;
+	}
+
+	mutable_string_free(&(target->url));
+	endpoint_free(&(target->endpoint));
+	uri_free(&(target->uri));
+	qs_free(&(target->query_string));
+
+	return;
+}
 
 // Work with URLs
+#define PROTO_TOKEN "://"
+#define PROTO_LEN		8
+static char _playbuff[1024];
+inline scheme_t scheme_from_str(const char *str) {
+	// if (str == NULL) {
+		sprintf(_playbuff, "Invalid or missing URL Scheme '%s'", str);
+		SET_URL_ERROR(_playbuff);
+	// }
+
+	return INVALID;
+}
+
 url_t* url_parse(url_t *output, mutable_string_t *input) {
+	char *tok = NULL;
+	char proto[PROTO_LEN];
+
+	// Let's get the scheme
+	tok = strnstr(MUTSTR(input), PROTO_TOKEN, MAXIMUM_MUTABLE_STRING_SIZE);
+	strncpy(proto, MUTSTR(input), (tok - MUTSTR(input)));
+	proto[(tok - MUTSTR(input))] = '\0';
+
+	output->proto_scheme = scheme_from_str(proto);
+
+	fprintf(stderr, "Hiya, proto is '%s' and URL is '%s'\n", proto, MUTSTR(input));
+
 	return NULL;
 }
 
